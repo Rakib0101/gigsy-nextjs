@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faSearch, faShoppingBag, faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons'
 import CartDrawer from './CartDrawer'
 import Image from 'next/image'
+import { categoryData } from '@/data/categories'
 
 export default function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false)
@@ -76,37 +77,168 @@ export default function Header() {
                 <Link href="/shop" className="text-gray-700 no-underline text-sm font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition" style={{ fontFamily: "'Playfair Display', serif" }}>
                   SHOP BALLOONS <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
                 </Link>
-                <div className={`mega-menu absolute top-full left-1/2 transform -translate-x-1/2 bg-white shadow-lg py-8 px-8 min-w-[800px] z-[1000] mt-2.5 ${isMegaMenuOpen ? 'active' : ''}`}>
-                  <div className="grid grid-cols-3 gap-5">
-                    <div>
-                      <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        Popular Categories
-                      </h6>
-                      <ul className="list-none p-0 m-0">
-                        <li className="mb-2"><Link href="/categories/birthday-balloons" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Birthday Balloons</Link></li>
-                        <li className="mb-2"><Link href="/categories/wedding" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Wedding & Anniversary</Link></li>
-                        <li className="mb-2"><Link href="/categories/baby-shower" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Baby Shower</Link></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        Special Occasions
-                      </h6>
-                      <ul className="list-none p-0 m-0">
-                        <li className="mb-2"><Link href="/categories/holiday-balloons" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Holiday Balloons</Link></li>
-                        <li className="mb-2"><Link href="/categories/number-balloons" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Number Balloons</Link></li>
-                        <li className="mb-2"><Link href="/categories/letter-balloons" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Letter Balloons</Link></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
-                        Balloon Types
-                      </h6>
-                      <ul className="list-none p-0 m-0">
-                        <li className="mb-2"><Link href="/categories/foil-balloons" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Foil Balloons</Link></li>
-                        <li className="mb-2"><Link href="/categories/latex-balloons" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Latex Balloons</Link></li>
-                        <li className="mb-2"><Link href="/categories/giant-balloons" className="text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition" style={{ fontFamily: "'Lato', sans-serif" }}>Giant Balloons</Link></li>
-                      </ul>
+                <div className={`mega-menu absolute top-full left-0 w-full bg-white shadow-lg py-8 px-8 z-[1000] mt-2.5 ${isMegaMenuOpen ? 'active' : ''}`}>
+                  <div className="container mx-auto">
+                    <div className="grid grid-cols-6 gap-6">
+                      {/* By Type */}
+                      <div>
+                        <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          By Type
+                        </h6>
+                        <ul className="list-none p-0 m-0">
+                          {categoryData.byType.map((item, index) => (
+                            <li key={index} className="mb-3 group">
+                              <Link 
+                                href={`/categories/type/${item.slug}`} 
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                                style={{ fontFamily: "'Lato', sans-serif" }}
+                              >
+                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+                                <span>{item.name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* By Occasion */}
+                      <div>
+                        <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          By Occasion
+                        </h6>
+                        <ul className="list-none p-0 m-0">
+                          {categoryData.byOccasion.map((item, index) => (
+                            <li key={index} className="mb-3 group">
+                              <Link 
+                                href={`/categories/occasion/${item.slug}`} 
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                                style={{ fontFamily: "'Lato', sans-serif" }}
+                              >
+                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+                                <span>{item.name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* By Color */}
+                      <div>
+                        <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          By Color
+                        </h6>
+                        <ul className="list-none p-0 m-0">
+                          {categoryData.byColor.map((item, index) => (
+                            <li key={index} className="mb-3 group">
+                              <Link 
+                                href={`/categories/color/${item.slug}`} 
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                                style={{ fontFamily: "'Lato', sans-serif" }}
+                              >
+                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+                                <span>{item.name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* By Shape */}
+                      <div>
+                        <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          By Shape
+                        </h6>
+                        <ul className="list-none p-0 m-0">
+                          {categoryData.byShape.map((item, index) => (
+                            <li key={index} className="mb-3 group">
+                              <Link 
+                                href={`/categories/shape/${item.slug}`} 
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                                style={{ fontFamily: "'Lato', sans-serif" }}
+                              >
+                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+                                <span>{item.name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* By Holiday */}
+                      <div>
+                        <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          By Holiday
+                        </h6>
+                        <ul className="list-none p-0 m-0">
+                          {categoryData.byHoliday.map((item, index) => (
+                            <li key={index} className="mb-3 group">
+                              <Link 
+                                href={`/categories/holiday/${item.slug}`} 
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                                style={{ fontFamily: "'Lato', sans-serif" }}
+                              >
+                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+                                <span>{item.name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* By Theme */}
+                      <div>
+                        <h6 className="font-bold text-[13px] uppercase tracking-wide mb-4 text-gray-900" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          By Theme
+                        </h6>
+                        <h6 className="font-semibold text-[11px] uppercase tracking-wide mb-3 text-gray-700 mt-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          Classic Themes
+                        </h6>
+                        <ul className="list-none p-0 m-0">
+                          {categoryData.byTheme.classic.map((item, index) => (
+                            <li key={index} className="mb-3 group">
+                              <Link 
+                                href={`/categories/theme/classic/${item.slug}`} 
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                                style={{ fontFamily: "'Lato', sans-serif" }}
+                              >
+                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+                                <span>{item.name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                        <h6 className="font-semibold text-[11px] uppercase tracking-wide mb-3 text-gray-700 mt-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          Licensed Themes
+                        </h6>
+                        <ul className="list-none p-0 m-0">
+                          {categoryData.byTheme.licensed.map((item, index) => (
+                            <li key={index} className="mb-3 group">
+                              <Link 
+                                href={`/categories/theme/licensed/${item.slug}`} 
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                                style={{ fontFamily: "'Lato', sans-serif" }}
+                              >
+                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+                                <span>{item.name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>

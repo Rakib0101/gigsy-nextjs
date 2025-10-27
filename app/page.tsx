@@ -1,66 +1,19 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import Hero from '@/components/sections/landing/hero'
+import Fun from '@/components/sections/landing/fun'
+import FeaturedCategories from '@/components/sections/landing/featured-categories'
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative h-[600px] md:h-[800px] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/30">
-          <video src="/videos/hero-bg.mp4" autoPlay muted loop className="object-cover w-full h-full" />
-        </div>
-        <div className="relative h-full flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
-              BALLOON SHOPPING
-            </h1>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
-              (FINALLY) MADE EASY
-            </h2>
-            <button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold transition">
-              SHOP NOW
-            </button>
-          </div>
-        </div>
-      </div>
+      <Hero />
 
       {/* Balloons Are Fun Section */}
-      <div className="bg-gray-800 text-white py-16 px-4">
-        <div className="container mx-auto text-center">
-          <p className="text-2xl md:text-5xl font-bold mb-12">BALLOONS ARE FUN. SHOPPING FOR THEM SHOULD BE. TOO.</p>
-          <div className="flex justify-around gap-12 max-w-3xl mx-auto">
-            <Image src="/images/logo-green-sm.avif" alt="JIGSY" width={103} height={30} />
-            <Image src="/images/logo-purple-sm.avif" alt="JIGSY" width={103} height={30} />
-            <Image src="/images/logo-yellow-sm.avif" alt="JIGSY" width={103} height={30} />
-          </div>
-        </div>
-      </div>
+      <Fun />
 
       {/* Featured Collections Section */}
-      <div className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">FEATURED COLLECTIONS</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { name: 'Adult Birthday', icon: 'fa-birthday-cake', color: 'from-pink-400 to-pink-600' },
-              { name: 'Kids Birthday', icon: 'fa-cake', color: 'from-yellow-400 to-yellow-600' },
-              { name: 'Wedding & Engagement', icon: 'fa-heart', color: 'from-red-400 to-red-600' },
-              { name: 'Anniversary', icon: 'fa-ring', color: 'from-purple-400 to-purple-600' },
-              { name: 'Baby', icon: 'fa-baby', color: 'from-blue-400 to-blue-600' },
-              { name: 'Graduation', icon: 'fa-graduation-cap', color: 'from-indigo-400 to-indigo-600' },
-              { name: 'Celebration', icon: 'fa-champagne-glasses', color: 'from-teal-400 to-teal-600' },
-              { name: 'Holiday', icon: 'fa-calendar', color: 'from-green-400 to-green-600' },
-            ].map((category, index) => (
-              <Link key={index} href="#" className="text-center group">
-                <div className={`w-24 h-24 md:w-32 md:h-32 mx-auto mb-4 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center group-hover:scale-110 transition`}>
-                  <i className={`fas ${category.icon} text-4xl md:text-5xl text-white`}></i>
-                </div>
-                <p className="text-sm md:text-base font-semibold">{category.name}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      <FeaturedCategories />
 
       {/* Balloon Type Showcase */}
       <div className="py-16 px-4 bg-gray-50">
