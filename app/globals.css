@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  @apply text-gray-800;
+}
+
+/* Custom styles for complex interactions */
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Mega menu styles */
+.mega-menu {
+  display: none;
+}
+
+.mega-menu.active {
+  display: block;
+}
+
+/* Cart drawer styles */
+.cart-drawer {
+  transition: right 0.3s ease;
+}
+
+.overlay {
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
