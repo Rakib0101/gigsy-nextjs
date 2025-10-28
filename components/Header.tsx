@@ -31,7 +31,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white py-5 relative">
+      <header className="bg-white pt-5 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
             {/* User Icon */}
@@ -67,7 +67,7 @@ export default function Header() {
 
           {/* Navigation */}
           <nav className="border-t border-gray-200 pt-4 mt-4">
-            <ul className="flex justify-center gap-8 list-none m-0 p-0">
+            <ul className="flex justify-center gap-8 list-none m-0 p-0 *:pb-5">
               <li className="relative">
                 <Link href="/" className="text-gray-700 no-underline text-sm font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition" style={{ fontFamily: "'Playfair Display', serif" }}>
                   HOME
@@ -87,16 +87,13 @@ export default function Header() {
                         </h6>
                         <ul className="list-none p-0 m-0">
                           {categoryData.byType.map((item, index) => (
-                            <li key={index} className="mb-3 group">
-                              <Link
-                                href={`/categories/type/${item.slug}`}
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
+                            <li key={index} className="mb-0.5">
+                              <Link 
+                                href={`/categories/type/${item.slug}`} 
+                                className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
-                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <span>{item.name}</span>
+                                {item.name}
                               </Link>
                             </li>
                           ))}
@@ -110,16 +107,13 @@ export default function Header() {
                         </h6>
                         <ul className="list-none p-0 m-0">
                           {categoryData.byOccasion.map((item, index) => (
-                            <li key={index} className="mb-3 group">
-                              <Link
-                                href={`/categories/occasion/${item.slug}`}
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
+                            <li key={index} className="mb-0.5">
+                              <Link 
+                                href={`/categories/occasion/${item.slug}`} 
+                                className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
-                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <span>{item.name}</span>
+                                {item.name}
                               </Link>
                             </li>
                           ))}
@@ -133,16 +127,13 @@ export default function Header() {
                         </h6>
                         <ul className="list-none p-0 m-0">
                           {categoryData.byColor.map((item, index) => (
-                            <li key={index} className="mb-3 group">
-                              <Link
-                                href={`/categories/color/${item.slug}`}
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
+                            <li key={index} className="mb-0.5">
+                              <Link 
+                                href={`/categories/color/${item.slug}`} 
+                                className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
-                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <span>{item.name}</span>
+                                {item.name}
                               </Link>
                             </li>
                           ))}
@@ -156,16 +147,13 @@ export default function Header() {
                         </h6>
                         <ul className="list-none p-0 m-0">
                           {categoryData.byShape.map((item, index) => (
-                            <li key={index} className="mb-3 group">
-                              <Link
-                                href={`/categories/shape/${item.slug}`}
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
+                            <li key={index} className="mb-0.5">
+                              <Link 
+                                href={`/categories/shape/${item.slug}`} 
+                                className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
-                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <span>{item.name}</span>
+                                {item.name}
                               </Link>
                             </li>
                           ))}
@@ -179,16 +167,13 @@ export default function Header() {
                         </h6>
                         <ul className="list-none p-0 m-0">
                           {categoryData.byHoliday.map((item, index) => (
-                            <li key={index} className="mb-3 group">
-                              <Link
-                                href={`/categories/holiday/${item.slug}`}
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
+                            <li key={index} className="mb-0.5">
+                              <Link 
+                                href={`/categories/holiday/${item.slug}`} 
+                                className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
-                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <span>{item.name}</span>
+                                {item.name}
                               </Link>
                             </li>
                           ))}
@@ -205,16 +190,13 @@ export default function Header() {
                         </h6>
                         <ul className="list-none p-0 m-0">
                           {categoryData.byTheme.classic.map((item, index) => (
-                            <li key={index} className="mb-3 group">
-                              <Link
-                                href={`/categories/theme/classic/${item.slug}`}
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
+                            <li key={index} className="mb-0.5">
+                              <Link 
+                                href={`/categories/theme/classic/${item.slug}`} 
+                                className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
-                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <span>{item.name}</span>
+                                {item.name}
                               </Link>
                             </li>
                           ))}
@@ -224,16 +206,13 @@ export default function Header() {
                         </h6>
                         <ul className="list-none p-0 m-0">
                           {categoryData.byTheme.licensed.map((item, index) => (
-                            <li key={index} className="mb-3 group">
-                              <Link
-                                href={`/categories/theme/licensed/${item.slug}`}
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
+                            <li key={index} className="mb-0.5">
+                              <Link 
+                                href={`/categories/theme/licensed/${item.slug}`} 
+                                className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
-                                <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
-                                  <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                                </div>
-                                <span>{item.name}</span>
+                                {item.name}
                               </Link>
                             </li>
                           ))}
