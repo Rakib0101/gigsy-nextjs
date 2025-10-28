@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faSearch, faShoppingBag, faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons'
 import CartDrawer from './CartDrawer'
 import Image from 'next/image'
 import { categoryData } from '@/data/categories'
@@ -31,31 +31,31 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <header className="bg-white py-5">
+      <header className="bg-white py-5 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
             {/* User Icon */}
             <div className="flex items-center">
               <Link href="/" className="inline-flex items-center text-gray-800 hover:text-gray-600 transition">
-                <svg className="svg-inline--fa fa-user icon size-[25px]" aria-hidden="true" focusable="false" data-prefix="fat" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M336 128a112 112 0 1 0 -224 0 112 112 0 1 0 224 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM16 482.3c0 7.6 6.1 13.7 13.7 13.7H418.3c7.6 0 13.7-6.1 13.7-13.7C432 392.7 359.3 320 269.7 320H178.3C88.7 320 16 392.7 16 482.3zm-16 0C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"></path></svg>
+                <svg className="size-[25px]" aria-hidden="true" focusable="false" data-prefix="fat" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M336 128a112 112 0 1 0 -224 0 112 112 0 1 0 224 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM16 482.3c0 7.6 6.1 13.7 13.7 13.7H418.3c7.6 0 13.7-6.1 13.7-13.7C432 392.7 359.3 320 269.7 320H178.3C88.7 320 16 392.7 16 482.3zm-16 0C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"></path></svg>
               </Link>
             </div>
 
             {/* Logo */}
             <div className="flex items-center justify-center">
               <Link href="/" className="text-4xl font-bold text-[#ff1493] hover:text-[#ff1493] no-underline tracking-wider" style={{ fontFamily: "'Lato', sans-serif" }}>
-                <Image src="/images/logo.avif" alt="JIGSY" width={250} height={80} />
+                <Image src="/images/logo.png" alt="JIGSY" width={100} height={100} className="aspect-square w-auto h-auto object-cover" />
               </Link>
             </div>
 
             {/* Search & Cart */}
             <div className="flex items-center justify-end gap-4">
               <Link href="#" className="flex items-center text-lg text-gray-800 hover:text-gray-600 transition no-underline">
-                <FontAwesomeIcon icon={faSearch} className="mr-2" />
+                <svg className="size-[25px]" aria-hidden="true" focusable="false" data-prefix="fat" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M400 208A192 192 0 1 0 16 208a192 192 0 1 0 384 0zM349.3 360.6C312.2 395 262.6 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 54.6-21 104.2-55.4 141.3l149 149c3.1 3.1 3.1 8.2 0 11.3s-8.2 3.1-11.3 0l-149-149z"></path></svg>
                 <span className="text-xs font-semibold tracking-wide uppercase" style={{ fontFamily: "'Lato', sans-serif" }}>SEARCH</span>
               </Link>
               <button className="relative inline-block cursor-pointer" onClick={() => setIsCartOpen(true)}>
-                <FontAwesomeIcon icon={faShoppingBag} className="text-2xl text-gray-800" />
+                <svg className="size-[25px]" aria-hidden="true" focusable="false" data-prefix="fat" data-icon="bag-shopping" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M144 96v32H304V96c0-44.2-35.8-80-80-80s-80 35.8-80 80zm-16 48H48c-17.7 0-32 14.3-32 32V416c0 44.2 35.8 80 80 80H352c44.2 0 80-35.8 80-80V176c0-17.7-14.3-32-32-32H320v88c0 4.4-3.6 8-8 8s-8-3.6-8-8V144H144v88c0 4.4-3.6 8-8 8s-8-3.6-8-8V144zm0-16V96c0-53 43-96 96-96s96 43 96 96v32h80c26.5 0 48 21.5 48 48V416c0 53-43 96-96 96H96c-53 0-96-43-96-96V176c0-26.5 21.5-48 48-48h80z"></path></svg>
                 {cartItems > 0 && (
                   <span className="absolute -top-2 -right-2 bg-gray-600 text-white rounded px-1.5 py-0.5 text-[11px] font-bold min-w-[20px] text-center">
                     {cartItems}
@@ -73,11 +73,11 @@ export default function Header() {
                   HOME
                 </Link>
               </li>
-              <li className="relative" onMouseEnter={() => setIsMegaMenuOpen(true)} onMouseLeave={() => setIsMegaMenuOpen(false)}>
+              <li onMouseEnter={() => setIsMegaMenuOpen(true)} onMouseLeave={() => setIsMegaMenuOpen(false)}>
                 <Link href="/shop" className="text-gray-700 no-underline text-sm font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  SHOP BALLOONS <FontAwesomeIcon icon={faChevronDown} className="text-[10px]" />
+                  SHOP BALLOONS <FontAwesomeIcon icon={faChevronDown} className="text-[10px] nav-link-icon" />
                 </Link>
-                <div className={`mega-menu absolute top-full left-0 w-full bg-white shadow-lg py-8 px-8 z-[1000] mt-2.5 ${isMegaMenuOpen ? 'active' : ''}`}>
+                <div className={`mega-menu absolute top-full left-0 w-full bg-white shadow-lg py-8 px-8 z-[1000] pt-12 ${isMegaMenuOpen ? 'active' : ''}`}>
                   <div className="container mx-auto">
                     <div className="grid grid-cols-6 gap-6">
                       {/* By Type */}
@@ -88,9 +88,9 @@ export default function Header() {
                         <ul className="list-none p-0 m-0">
                           {categoryData.byType.map((item, index) => (
                             <li key={index} className="mb-3 group">
-                              <Link 
-                                href={`/categories/type/${item.slug}`} 
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                              <Link
+                                href={`/categories/type/${item.slug}`}
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
                                 <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -111,9 +111,9 @@ export default function Header() {
                         <ul className="list-none p-0 m-0">
                           {categoryData.byOccasion.map((item, index) => (
                             <li key={index} className="mb-3 group">
-                              <Link 
-                                href={`/categories/occasion/${item.slug}`} 
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                              <Link
+                                href={`/categories/occasion/${item.slug}`}
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
                                 <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -134,9 +134,9 @@ export default function Header() {
                         <ul className="list-none p-0 m-0">
                           {categoryData.byColor.map((item, index) => (
                             <li key={index} className="mb-3 group">
-                              <Link 
-                                href={`/categories/color/${item.slug}`} 
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                              <Link
+                                href={`/categories/color/${item.slug}`}
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
                                 <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -157,9 +157,9 @@ export default function Header() {
                         <ul className="list-none p-0 m-0">
                           {categoryData.byShape.map((item, index) => (
                             <li key={index} className="mb-3 group">
-                              <Link 
-                                href={`/categories/shape/${item.slug}`} 
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                              <Link
+                                href={`/categories/shape/${item.slug}`}
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
                                 <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -180,9 +180,9 @@ export default function Header() {
                         <ul className="list-none p-0 m-0">
                           {categoryData.byHoliday.map((item, index) => (
                             <li key={index} className="mb-3 group">
-                              <Link 
-                                href={`/categories/holiday/${item.slug}`} 
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                              <Link
+                                href={`/categories/holiday/${item.slug}`}
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
                                 <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -206,9 +206,9 @@ export default function Header() {
                         <ul className="list-none p-0 m-0">
                           {categoryData.byTheme.classic.map((item, index) => (
                             <li key={index} className="mb-3 group">
-                              <Link 
-                                href={`/categories/theme/classic/${item.slug}`} 
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                              <Link
+                                href={`/categories/theme/classic/${item.slug}`}
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
                                 <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
@@ -225,9 +225,9 @@ export default function Header() {
                         <ul className="list-none p-0 m-0">
                           {categoryData.byTheme.licensed.map((item, index) => (
                             <li key={index} className="mb-3 group">
-                              <Link 
-                                href={`/categories/theme/licensed/${item.slug}`} 
-                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group" 
+                              <Link
+                                href={`/categories/theme/licensed/${item.slug}`}
+                                className="flex items-center gap-2 text-gray-600 no-underline text-sm capitalize font-normal hover:text-[#ff6b6b] transition group"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
                                 <div className="w-10 h-10 rounded bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">

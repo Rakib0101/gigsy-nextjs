@@ -6,9 +6,9 @@ const Fun = () => {
         <div className="container mx-auto text-center">
           <p className="text-2xl md:text-5xl font-bold mb-12">BALLOONS ARE FUN. SHOPPING FOR THEM SHOULD BE. TOO.</p>
           <div className="flex justify-around gap-12 max-w-3xl mx-auto">
-            <Image src="/images/logo-green-sm.avif" alt="JIGSY" width={103} height={30} />
-            <Image src="/images/logo-purple-sm.avif" alt="JIGSY" width={103} height={30} />
-            <Image src="/images/logo-yellow-sm.avif" alt="JIGSY" width={103} height={30} />
+            <Image src="/images/logo.png" alt="JIGSY" width={103} height={30} />
+            <Image src="/images/logo.png" alt="JIGSY" width={103} height={30} />
+            <Image src="/images/logo.png" alt="JIGSY" width={103} height={30} />
           </div>
         </div>
       </div>

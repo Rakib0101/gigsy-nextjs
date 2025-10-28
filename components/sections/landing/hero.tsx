@@ -6,12 +6,9 @@ export default function Hero() {
       </div>
       <div className="relative h-full flex items-center justify-center">
         <div className="text-center text-white px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
-            BALLOON SHOPPING
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
+            BALLOON SHOPPING (FINALLY) <br className="hidden md:block" /> MADE EASY
           </h1>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 uppercase" style={{ fontFamily: "'Playfair Display', serif" }}>
-            (FINALLY) MADE EASY
-          </h2>
           <button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold transition">
             SHOP NOW
           </button>
