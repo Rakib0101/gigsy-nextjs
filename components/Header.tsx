@@ -12,6 +12,8 @@ export default function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false)
   const [cartItems, setCartItems] = useState(0)
+  const [isScrolledUp, setIsScrolledUp] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     // Load cart items from localStorage or API
@@ -21,17 +23,39 @@ export default function Header() {
     }
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // If scrolling up or at top, show header
+      if (currentScrollY < lastScrollY || currentScrollY < 50) {
+        setIsScrolledUp(true)
+      } else if (currentScrollY > lastScrollY) {
+        // If scrolling down and past a threshold, hide header
+        setIsScrolledUp(false)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
   return (
     <>
-      {/* Header Top Bar */}
-      <div className="bg-gray-800 text-white py-2 text-center text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>
-        <div className="container mx-auto px-4">
-          Balloons delivered straight to your door
+      <div className={`fixed top-0 left-0 right-0 z-[9999] bg-white transition-transform duration-300 ${
+        isScrolledUp ? 'translate-y-0' : '-translate-y-full'
+      }`}>
+        {/* Header Top Bar */}
+        <div className="bg-[#3a3a3e] text-white py-2 text-center text-lg font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <div className="container mx-auto px-4">
+            Balloons delivered straight to your door
+          </div>
         </div>
-      </div>
 
-      {/* Main Header */}
-      <header className="bg-white pt-5 relative">
+        {/* Main Header */}
+        <header className="bg-white pt-5 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
             {/* User Icon */}
@@ -44,7 +68,7 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center justify-center">
               <Link href="/" className="text-4xl font-bold text-[#ff1493] hover:text-[#ff1493] no-underline tracking-wider" style={{ fontFamily: "'Lato', sans-serif" }}>
-                <Image src="/images/logo.png" alt="JIGSY" width={100} height={100} className="aspect-square w-auto h-auto object-cover" />
+                <Image src="/images/logo.png" alt="JIGSY" width={73} height={73} className="aspect-square h-[73px] w-[73px] object-cover" />
               </Link>
             </div>
 
@@ -236,6 +260,10 @@ export default function Header() {
           </nav>
         </div>
       </header>
+      </div>
+
+      {/* Spacer to prevent content from jumping */}
+      <div className="h-[120px]"></div>
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
