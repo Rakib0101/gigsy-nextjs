@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
 
 /* Custom styles for complex interactions */
 .container {
-  @apply max-w-7xl mx-auto;
+  @apply max-w-[1200px] xl:px-12 px-4 mx-auto;
 }
 
 /* Mega menu styles */
@@ -49,4 +49,3 @@ body {
 body.no-scroll {
   overflow: hidden;
 }
-
