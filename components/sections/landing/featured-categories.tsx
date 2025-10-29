@@ -1,10 +1,13 @@
-import { getFeaturedCategories } from "@/data/categories";
+import {
+  getFeaturedCategories,
+  getFeaturedSquareCategories,
+} from "@/data/categories";
 import Image from "next/image";
 import Link from "next/link";
 
 const FeaturedCategories = () => {
   const featuredCategories = getFeaturedCategories();
-
+  const featuredSquareCategories = getFeaturedSquareCategories();
   return (
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
@@ -32,6 +35,31 @@ const FeaturedCategories = () => {
               <h3 className="text-center text-lg uppercase font-medium text-[#2c2c2c] mt-2">
                 {category.name}
               </h3>
+            </Link>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-32">
+          {featuredSquareCategories.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/categories/${category.slug}`}
+              className="p-8 flex flex-col items-center bg-[#2C2C2C] rounded-lg shadow-md group hover:scale-105 transition-transform duration-300"
+            >
+              <Image
+                src={category.image}
+                alt={category.name}
+                width={130}
+                height={180}
+                className="object-contain w-full h-auto -mt-20 mx-auto"
+                draggable={false}
+                priority
+              />
+              <div className="w-full flex-1 flex items-end">
+                <h3 className="w-full text-center text-lg md:text-2xl font-serif font-bold uppercase text-white tracking-wide px-2">
+                  {category.name}
+                </h3>
+              </div>
             </Link>
           ))}
         </div>

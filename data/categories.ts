@@ -6,25 +6,29 @@ export const categoryData = {
       name: "Number Balloons",
       slug: "number-balloons",
       count: 45,
-      image: "/images/categories/number-balloons.jpg",
+      image: "/images/categories/number-balloons.webp",
+      featuredSquare: true,
     },
     {
       name: "Letter Balloons",
       slug: "letter-balloons",
       count: 52,
-      image: "/images/categories/letter-balloons.jpg",
+      image: "/images/categories/letter-balloons.webp",
+      featuredSquare: true,
     },
     {
       name: "Foil Shapes",
       slug: "foil-shapes",
       count: 38,
-      image: "/images/categories/foil-shapes.jpg",
+      image: "/images/categories/foil-balloons.webp",
+      featuredSquare: true,
     },
     {
       name: "Latex Balloons",
       slug: "latex-balloons",
       count: 67,
-      image: "/images/categories/latex-balloons.jpg",
+      image: "/images/categories/latex-balloons.webp",
+      featuredSquare: true,
     },
     {
       name: "Orbz Balloons",
@@ -495,4 +499,8 @@ export const getCategoryBySlug = (slug: string) => {
 // Helper function to get featured categories
 export const getFeaturedCategories = () => {
   return categoryData.byOccasion.filter((cat) => cat.featured);
+};
+
+export const getFeaturedSquareCategories = () => {
+  return categoryData.byType.filter((cat) => cat.featuredSquare);
 };
