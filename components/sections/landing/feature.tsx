@@ -6,11 +6,9 @@ import Arrow from "@/components/global/svgs/arrow";
 
 const Feature = () => {
   return (
+    <>
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-16 tracking-wide">
-          FEATURES
-        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="bg-[#f9f3f1] p-5 flex flex-col items-center justify-center gap-1.5 rounded-xl">
                 <Pickup />
@@ -49,6 +47,17 @@ const Feature = () => {
         </div>
       </div>
     </section>
+    <section className="py-20 px-4" style={{ backgroundImage: "url('/images/bg-instagram.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="container mx-auto max-w-7xl">
+            <div className="flex justify-center items-center">
+                <div className="w-full text-center flex flex-col gap-4 items-center justify-center max-w-[360px] bg-white/40 backdrop-blur-sm border border-white-200 rounded-xl px-6 py-12">
+                    <h2 className="text-4xl uppercase font-bold">@joyinflate</h2>
+                    <p className="text-gray-500 uppercase text-xl">Follow us on Instagram</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </>
   );
 };
 
