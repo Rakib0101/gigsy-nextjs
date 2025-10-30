@@ -3,6 +3,7 @@ import FeaturedThemes from "@/components/sections/landing/featured-themes";
 import Fun from "@/components/sections/landing/fun";
 import Hero from "@/components/sections/landing/hero";
 import Testimonial from "@/components/sections/landing/testimonial";
+import Feature from "@/components/sections/landing/feature";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Testimonial Section */}
       <Testimonial />
+
+      {/* Feature Section */}
+      <Feature />
     </>
   );
 }
