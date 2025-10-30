@@ -346,27 +346,26 @@ export const categoryData = {
         slug: "classic-themes",
         count: 78,
         image: "/images/categories/theme-01.webp",
-        featured: true,
       },
       {
         name: "Mermaid",
         slug: "mermaid",
         count: 24,
-        image: "/images/categories/theme-02.webp",
+        image: "/images/categories/theme-mermaid.webp",
         featured: true,
       },
       {
         name: "Unicorn",
         slug: "unicorn",
         count: 45,
-        image: "/images/categories/theme-03.webp",
+        image: "/images/categories/theme-unicorn.webp",
         featured: true,
       },
       {
         name: "Prince & Princess",
         slug: "prince-princess",
         count: 34,
-        image: "/images/categories/theme-04.webp",
+        image: "/images/categories/theme-prince.webp",
         featured: true,
       },
       {
@@ -379,7 +378,8 @@ export const categoryData = {
         name: "Birthday Cakes",
         slug: "birthday-cakes",
         count: 52,
-        image: "/images/categories/theme-06.webp",
+        image: "/images/categories/theme-cakes.webp",
+        featured: true,
       },
       {
         name: "Rainbows",
@@ -391,20 +391,21 @@ export const categoryData = {
         name: "Sports",
         slug: "sports",
         count: 89,
-        image: "/images/categories/theme-08.webp",
+        image: "/images/categories/theme-sports.webp",
         featured: true,
       },
       {
         name: "Planes",
         slug: "planes",
         count: 15,
-        image: "/images/categories/theme-09.webp",
+        image: "/images/categories/theme-planes.webp",
+        featured: true,
       },
       {
         name: "Dinosaur",
         slug: "dinosaur",
         count: 38,
-        image: "/images/categories/theme-10.webp",
+        image: "/images/categories/theme-dinosaur.webp",
         featured: true,
       },
       {
@@ -431,6 +432,13 @@ export const categoryData = {
         count: 16,
         image: "/images/categories/theme-14.webp",
       },
+      {
+        name: "Licensed",
+        slug: "licensed-themes",
+        count: 45,
+        image: "/images/categories/theme-licensed.webp",
+        featured: true,
+      }
     ],
     licensed: [
       {

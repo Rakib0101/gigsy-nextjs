@@ -23,16 +23,18 @@ const FeaturedThemes = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-12">
           {themes.map((theme) => (
-            <div key={theme.id}>
+            <Link key={theme.slug} href={`/categories/theme/${theme.slug}`} className="group relative rounded-lg overflow-hidden border border-gray-200 hover:scale-105 transition-transform duration-300">
               <Image
                 src={theme.image}
                 alt={theme.name}
                 width={264}
                 height={356}
-                className="aspect-66/89 w-full h-full object-cover"
+                className="aspect-66/89 w-full h-full lg:min-h-[356px] object-cover"
               />
-              <h3>{theme.name}</h3>
-            </div>
+              <h3 className="absolute bottom-2 left-2 w-full text-lg md:text-3xl font-serif font-bold uppercase text-[#3a3a3e] tracking-wide px-2">
+                {theme.name}
+              </h3>
+            </Link>
           ))}
         </div>
       </div>
