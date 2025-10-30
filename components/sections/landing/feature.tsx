@@ -258,7 +258,7 @@ const Feature = () => {
               {/* Company logo */}
               <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white p-1.5 border border-[#eaeaea]">
                 <Image
-                  src="/images/logo.png" // replace with actual logo if needed
+                  src="/images/logo.png"
                   alt="Glosy Balloons"
                   width={48}
                   height={48}
@@ -293,18 +293,17 @@ const Feature = () => {
               <div className="w-72 bg-white rounded-lg shadow p-4 flex flex-col gap-1 border border-[#eaeaea]">
                 <div className="flex items-center gap-2 text-[#29243d] text-xs opacity-80 mb-1">
                   <span>Mar 30, 2024</span>
-                  <img src="https://www.gstatic.com/images/icons/material/system/1x/grade_grey600_24dp.png" alt="Google" className="w-4 h-4 ml-auto" />
+                  
                 </div>
                 <div className="text-yellow-400 text-[16px] leading-none">★★★★★</div>
                 <div className="text-[#29243d] text-sm flex-1 mt-1">
-                  The first wholesale experience I've ever had with a balloon vendor. Quality was perfect and communication was amazing. Definitely recommend!
+                  The first wholesale experience I&apos;ve ever had with a balloon vendor. Quality was perfect and communication was amazing. Definitely recommend!
                 </div>
                 <a href="#" className="text-[#466af4] text-xs mt-2 hover:underline">Read More</a>
               </div>
               <div className="w-72 bg-white rounded-lg shadow p-4 flex flex-col gap-1 border border-[#eaeaea]">
                 <div className="flex items-center gap-2 text-[#29243d] text-xs opacity-80 mb-1">
                   <span>Mar 28, 2024</span>
-                  <img src="https://www.gstatic.com/images/icons/material/system/1x/grade_grey600_24dp.png" alt="Google" className="w-4 h-4 ml-auto" />
                 </div>
                 <div className="text-yellow-400 text-[16px] leading-none">★★★★★</div>
                 <div className="text-[#29243d] text-sm flex-1 mt-1">
