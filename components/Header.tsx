@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -14,6 +15,7 @@ export default function Header() {
   const [cartItems, setCartItems] = useState(0)
   const [isScrolledUp, setIsScrolledUp] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const pathname = usePathname()
 
   useEffect(() => {
     // Load cart items from localStorage or API
@@ -44,18 +46,17 @@ export default function Header() {
 
   return (
     <>
-      <div className={`fixed top-0 left-0 right-0 z-[9999] bg-white transition-transform duration-300 ${
+      {/* Header Top Bar - Not sticky */}
+      <div className="bg-[#3a3a3e] text-white py-2 text-center text-lg font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
+        <div className="container mx-auto px-4">
+          Balloons delivered straight to your door
+        </div>
+      </div>
+
+      {/* Main Header - Sticky */}
+      <header className={`fixed top-[41px] left-0 right-0 z-[9999] bg-white pt-5 transition-transform duration-300 ${
         isScrolledUp ? 'translate-y-0' : '-translate-y-full'
       }`}>
-        {/* Header Top Bar */}
-        <div className="bg-[#3a3a3e] text-white py-2 text-center text-lg font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
-          <div className="container mx-auto px-4">
-            Balloons delivered straight to your door
-          </div>
-        </div>
-
-        {/* Main Header */}
-        <header className="bg-white pt-5 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
             {/* User Icon */}
@@ -68,15 +69,15 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center justify-center">
               <Link href="/" className="text-4xl font-bold text-[#ff1493] hover:text-[#ff1493] no-underline tracking-wider" style={{ fontFamily: "'Lato', sans-serif" }}>
-                <Image src="/images/logo.png" alt="JIGSY" width={73} height={73} className="aspect-square h-[73px] w-[73px] object-cover" />
+                <Image src="/images/logo.png" alt="JIGSY" width={103} height={103} className="aspect-square h-[103px] w-[103px] object-cover" />
               </Link>
             </div>
 
             {/* Search & Cart */}
             <div className="flex items-center justify-end gap-4">
-              <Link href="#" className="flex items-center text-lg text-gray-800 hover:text-gray-600 transition no-underline">
+              <Link href="#" className="flex gap-1 items-center text-lg text-gray-800 hover:text-gray-600 transition no-underline">
                 <svg className="size-[25px]" aria-hidden="true" focusable="false" data-prefix="fat" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M400 208A192 192 0 1 0 16 208a192 192 0 1 0 384 0zM349.3 360.6C312.2 395 262.6 416 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208c0 54.6-21 104.2-55.4 141.3l149 149c3.1 3.1 3.1 8.2 0 11.3s-8.2 3.1-11.3 0l-149-149z"></path></svg>
-                <span className="text-xs font-semibold tracking-wide uppercase" style={{ fontFamily: "'Lato', sans-serif" }}>SEARCH</span>
+                <span className="text-lg font-bold tracking-wide uppercase">SEARCH</span>
               </Link>
               <button className="relative inline-block cursor-pointer" onClick={() => setIsCartOpen(true)}>
                 <svg className="size-[25px]" aria-hidden="true" focusable="false" data-prefix="fat" data-icon="bag-shopping" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M144 96v32H304V96c0-44.2-35.8-80-80-80s-80 35.8-80 80zm-16 48H48c-17.7 0-32 14.3-32 32V416c0 44.2 35.8 80 80 80H352c44.2 0 80-35.8 80-80V176c0-17.7-14.3-32-32-32H320v88c0 4.4-3.6 8-8 8s-8-3.6-8-8V144H144v88c0 4.4-3.6 8-8 8s-8-3.6-8-8V144zm0-16V96c0-53 43-96 96-96s96 43 96 96v32h80c26.5 0 48 21.5 48 48V416c0 53-43 96-96 96H96c-53 0-96-43-96-96V176c0-26.5 21.5-48 48-48h80z"></path></svg>
@@ -91,14 +92,14 @@ export default function Header() {
 
           {/* Navigation */}
           <nav className="border-t border-gray-200 pt-4 mt-4">
-            <ul className="flex justify-center gap-8 list-none m-0 p-0 *:pb-5">
+            <ul className="flex justify-center gap-8 list-none m-0">
               <li className="relative">
-                <Link href="/" className="text-gray-700 no-underline text-sm font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <Link href="/" className={`inline-block text-gray-700 no-underline text-lg font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition ${pathname === '/' ? 'border-b-2 border-gray-900' : ''}`} style={{ fontFamily: "'Playfair Display', serif" }}>
                   HOME
                 </Link>
               </li>
               <li onMouseEnter={() => setIsMegaMenuOpen(true)} onMouseLeave={() => setIsMegaMenuOpen(false)}>
-                <Link href="/shop" className="text-gray-700 no-underline text-sm font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <Link href="/shop" className={`inline-block text-gray-700 no-underline text-lg font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition ${pathname?.startsWith('/shop') ? 'border-b-2 border-gray-900' : ''}`} style={{ fontFamily: "'Playfair Display', serif" }}>
                   SHOP BALLOONS <FontAwesomeIcon icon={faChevronDown} className="text-[10px] nav-link-icon" />
                 </Link>
                 <div className={`mega-menu absolute top-full left-0 w-full bg-white shadow-lg py-8 px-8 z-[1000] pt-12 ${isMegaMenuOpen ? 'active' : ''}`}>
@@ -110,8 +111,8 @@ export default function Header() {
                           By Type
                         </h6>
                         <ul className="list-none p-0 m-0">
-                          {categoryData.byType.map((item, index) => (
-                            <li key={index} className="mb-0.5">
+                          {categoryData.byType.map((item) => (
+                            <li key={item.slug} className="mb-0.5">
                               <Link 
                                 href={`/categories/type/${item.slug}`} 
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
@@ -130,8 +131,8 @@ export default function Header() {
                           By Occasion
                         </h6>
                         <ul className="list-none p-0 m-0">
-                          {categoryData.byOccasion.map((item, index) => (
-                            <li key={index} className="mb-0.5">
+                          {categoryData.byOccasion.map((item) => (
+                            <li key={item.slug} className="mb-0.5">
                               <Link 
                                 href={`/categories/occasion/${item.slug}`} 
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
@@ -150,8 +151,8 @@ export default function Header() {
                           By Color
                         </h6>
                         <ul className="list-none p-0 m-0">
-                          {categoryData.byColor.map((item, index) => (
-                            <li key={index} className="mb-0.5">
+                          {categoryData.byColor.map((item) => (
+                            <li key={item.slug} className="mb-0.5">
                               <Link 
                                 href={`/categories/color/${item.slug}`} 
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
@@ -170,8 +171,8 @@ export default function Header() {
                           By Shape
                         </h6>
                         <ul className="list-none p-0 m-0">
-                          {categoryData.byShape.map((item, index) => (
-                            <li key={index} className="mb-0.5">
+                          {categoryData.byShape.map((item) => (
+                            <li key={item.slug} className="mb-0.5">
                               <Link 
                                 href={`/categories/shape/${item.slug}`} 
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
@@ -190,8 +191,8 @@ export default function Header() {
                           By Holiday
                         </h6>
                         <ul className="list-none p-0 m-0">
-                          {categoryData.byHoliday.map((item, index) => (
-                            <li key={index} className="mb-0.5">
+                          {categoryData.byHoliday.map((item) => (
+                            <li key={item.slug} className="mb-0.5">
                               <Link 
                                 href={`/categories/holiday/${item.slug}`} 
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
@@ -213,8 +214,8 @@ export default function Header() {
                           Classic Themes
                         </h6>
                         <ul className="list-none p-0 m-0">
-                          {categoryData.byTheme.classic.map((item, index) => (
-                            <li key={index} className="mb-0.5">
+                          {categoryData.byTheme.classic.map((item) => (
+                            <li key={item.slug} className="mb-0.5">
                               <Link 
                                 href={`/categories/theme/classic/${item.slug}`} 
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
@@ -229,8 +230,8 @@ export default function Header() {
                           Licensed Themes
                         </h6>
                         <ul className="list-none p-0 m-0">
-                          {categoryData.byTheme.licensed.map((item, index) => (
-                            <li key={index} className="mb-0.5">
+                          {categoryData.byTheme.licensed.map((item) => (
+                            <li key={item.slug} className="mb-0.5">
                               <Link 
                                 href={`/categories/theme/licensed/${item.slug}`} 
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition" 
@@ -247,12 +248,12 @@ export default function Header() {
                 </div>
               </li>
               <li className="relative">
-                <Link href="/weights-accessories" className="text-gray-700 no-underline text-sm font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <Link href="/weights-accessories" className={`inline-block text-gray-700 no-underline text-lg font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition ${pathname?.startsWith('/weights-accessories') ? 'border-b-2 border-gray-900' : ''}`} style={{ fontFamily: "'Playfair Display', serif" }}>
                   WEIGHTS & ACCESSORIES
                 </Link>
               </li>
               <li className="relative">
-                <Link href="/contact" className="text-gray-700 no-underline text-sm font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <Link href="/contact" className={`inline-block text-gray-700 no-underline text-lg font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition ${pathname?.startsWith('/contact') ? 'border-b-2 border-gray-900' : ''}`} style={{ fontFamily: "'Playfair Display', serif" }}>
                   CONTACT
                 </Link>
               </li>
@@ -260,10 +261,9 @@ export default function Header() {
           </nav>
         </div>
       </header>
-      </div>
 
-      {/* Spacer to prevent content from jumping */}
-      <div className="h-[120px]"></div>
+      {/* Spacer to prevent content from jumping - accounts for top bar and main header */}
+      {/* <div className="h-[161px]"></div> */}
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
