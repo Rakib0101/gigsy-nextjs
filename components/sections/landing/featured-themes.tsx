@@ -37,6 +37,35 @@ const FeaturedThemes = () => {
             </Link>
           ))}
         </div>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 items-center justify-center">
+          {/* Left: Image */}
+          <div className="col-span-2">
+            <Image
+              src="/images/theme-by-occasion.webp"
+              alt="Gift Giving Heart Balloons"
+              width={512}
+              height={210}
+              className="object-cover w-full max-h-[400px] rounded-xl"
+              priority
+            />
+          </div>
+          {/* Right: Text box */}
+          <div className="flex-1 w-full -ml-[20%] bg-[#f7f5f2] rounded-xl px-8 py-8 flex flex-col justify-center items-start shadow border border-gray-200 min-h-[210px]">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#232329] mb-3 leading-snug uppercase">
+              Gift Giving Made Easy. Imagine That.
+            </h3>
+            <p className="mb-6 text-base text-[#46444e] font-medium">
+              Because choosing someone a one-of-a-kind balloon should be as sweet as it sounds.
+            </p>
+            <Link
+              href="/categories/theme/occasion"
+              className="inline-block text-lg uppercase font-semibold mt-auto px-6 py-3 border border-gray-900 text-gray-900 rounded-xl hover:bg-gray-900 hover:text-white transition"
+            >
+              Shop Balloons by Occasion
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
