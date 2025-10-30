@@ -345,85 +345,91 @@ export const categoryData = {
         name: "Classic Themes",
         slug: "classic-themes",
         count: 78,
-        image: "/images/categories/theme-classic.jpg",
+        image: "/images/categories/theme-01.webp",
+        featured: true,
       },
       {
         name: "Mermaid",
         slug: "mermaid",
         count: 24,
-        image: "/images/categories/theme-mermaid.jpg",
+        image: "/images/categories/theme-02.webp",
+        featured: true,
       },
       {
         name: "Unicorn",
         slug: "unicorn",
         count: 45,
-        image: "/images/categories/theme-unicorn.jpg",
+        image: "/images/categories/theme-03.webp",
+        featured: true,
       },
       {
         name: "Prince & Princess",
         slug: "prince-princess",
         count: 34,
-        image: "/images/categories/theme-prince-princess.jpg",
+        image: "/images/categories/theme-04.webp",
+        featured: true,
       },
       {
         name: "Animals",
         slug: "animals",
         count: 98,
-        image: "/images/categories/theme-animals.jpg",
+        image: "/images/categories/theme-05.webp",
       },
       {
         name: "Birthday Cakes",
         slug: "birthday-cakes",
         count: 52,
-        image: "/images/categories/theme-birthday-cakes.jpg",
+        image: "/images/categories/theme-06.webp",
       },
       {
         name: "Rainbows",
         slug: "rainbows",
         count: 67,
-        image: "/images/categories/theme-rainbows.jpg",
+        image: "/images/categories/theme-07.webp",
       },
       {
         name: "Sports",
         slug: "sports",
         count: 89,
-        image: "/images/categories/theme-sports.jpg",
+        image: "/images/categories/theme-08.webp",
+        featured: true,
       },
       {
         name: "Planes",
         slug: "planes",
         count: 15,
-        image: "/images/categories/theme-planes.jpg",
+        image: "/images/categories/theme-09.webp",
       },
       {
         name: "Dinosaur",
         slug: "dinosaur",
         count: 38,
-        image: "/images/categories/theme-dinosaur.jpg",
+        image: "/images/categories/theme-10.webp",
+        featured: true,
       },
       {
         name: "Fire Truck",
         slug: "fire-truck",
         count: 12,
-        image: "/images/categories/theme-fire-truck.jpg",
+        image: "/images/categories/theme-11.webp",
       },
       {
         name: "Race Car",
         slug: "race-car",
         count: 19,
-        image: "/images/categories/theme-race-car.jpg",
+        image: "/images/categories/theme-12.webp",
       },
       {
         name: "Dump Truck",
         slug: "dump-truck",
         count: 14,
-        image: "/images/categories/theme-dump-truck.jpg",
+        image: "/images/categories/theme-13.webp",
       },
       {
         name: "Monster Truck",
         slug: "monster-truck",
         count: 16,
-        image: "/images/categories/theme-monster-truck.jpg",
+        image: "/images/categories/theme-14.webp",
       },
     ],
     licensed: [
@@ -503,4 +509,8 @@ export const getFeaturedCategories = () => {
 
 export const getFeaturedSquareCategories = () => {
   return categoryData.byType.filter((cat) => cat.featuredSquare);
+};
+
+export const getFeaturedThemes = () => {
+  return categoryData.byTheme.classic.filter((cat) => cat.featured);
 };
