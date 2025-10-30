@@ -54,8 +54,8 @@ export default function Header() {
       </div>
 
       {/* Main Header - Sticky */}
-      <header className={`fixed top-[41px] left-0 right-0 z-[9999] bg-white pt-5 transition-transform duration-300 ${
-        isScrolledUp ? 'translate-y-0' : '-translate-y-full'
+      <header className={`fixed top-[41px] left-0 right-0 z-[9999] bg-white backdrop-blur-sm pt-5 transition-transform duration-300 ${
+        isScrolledUp ? 'translate-y-[-41px]' : '-translate-y-full'
       }`}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 items-center">
@@ -261,9 +261,6 @@ export default function Header() {
           </nav>
         </div>
       </header>
-
-      {/* Spacer to prevent content from jumping - accounts for top bar and main header */}
-      {/* <div className="h-[161px]"></div> */}
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
