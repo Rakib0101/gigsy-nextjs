@@ -230,7 +230,7 @@ const Feature = () => {
         {/* Right section: Hours & Directions */}
         <div className="flex-1 flex flex-col items-start md:items-end mt-6 md:mt-0">
           <h3 className="text-lg font-semibold text-[#46444e] mb-2">HOURS</h3>
-          <div className="text-[#46444e] text-sm mb-3">
+          <div className="text-[#46444e] text-right text-sm mb-3">
             <div>Monday - Friday<br /><span className="ml-1">10:30 – 19:00</span></div>
             <div className="mt-1">Saturday & Sunday<br /><span className="ml-1">12:00 – 18:00</span></div>
           </div>
@@ -245,8 +245,80 @@ const Feature = () => {
         </div>
       </div>
     </div>
+    <section>
+    <div className="py-16 px-4 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-center text-[#232329] text-2xl md:text-3xl font-bold mb-8">
+          What Our Customers Are Saying About Us
+        </h2>
+        <div className="bg-[#f7f9fb] rounded-xl shadow border border-[#eaeaea] p-6 flex flex-col gap-5">
+          {/* Header: profile & write review button */}
+          <div className="flex justify-between items-center mb-4">
+            <div className="flex gap-3 items-center">
+              {/* Company logo */}
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white p-1.5 border border-[#eaeaea]">
+                <Image
+                  src="/images/logo.png" // replace with actual logo if needed
+                  alt="Glosy Balloons"
+                  width={48}
+                  height={48}
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <div className="font-semibold text-[#29243d] text-base leading-tight">
+                  Joyinflate Balloons
+                </div>
+                <div className="flex items-center text-yellow-400">
+                  <span className="text-[16px]">★★★★★</span>
+                  <span className="ml-1 text-xs font-semibold text-[#46444e]">5.0</span>
+                  <span className="mx-2 text-[#bcbcbc] text-xs">·</span>
+                </div>
+                  <p className="text-xs text-[#727272]">131 Google reviews</p>
+              </div>
+            </div>
+            <a
+              href="https://search.google.com/local/writereview?placeid=ChIJwQfRcrlZwokRQjzb7mWgtsw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#466af4] text-white px-4 py-2 rounded font-semibold text-sm shadow hover:bg-[#3450a7] transition-colors"
+            >
+              Write a Review
+            </a>
+          </div>
+
+          {/* Carousel of reviews */}
+          <div className="w-full overflow-x-auto">
+            <div className="flex gap-3 min-w-[1100px] md:min-w-0 md:justify-center">
+              <div className="w-72 bg-white rounded-lg shadow p-4 flex flex-col gap-1 border border-[#eaeaea]">
+                <div className="flex items-center gap-2 text-[#29243d] text-xs opacity-80 mb-1">
+                  <span>Mar 30, 2024</span>
+                  <img src="https://www.gstatic.com/images/icons/material/system/1x/grade_grey600_24dp.png" alt="Google" className="w-4 h-4 ml-auto" />
+                </div>
+                <div className="text-yellow-400 text-[16px] leading-none">★★★★★</div>
+                <div className="text-[#29243d] text-sm flex-1 mt-1">
+                  The first wholesale experience I've ever had with a balloon vendor. Quality was perfect and communication was amazing. Definitely recommend!
+                </div>
+                <a href="#" className="text-[#466af4] text-xs mt-2 hover:underline">Read More</a>
+              </div>
+              <div className="w-72 bg-white rounded-lg shadow p-4 flex flex-col gap-1 border border-[#eaeaea]">
+                <div className="flex items-center gap-2 text-[#29243d] text-xs opacity-80 mb-1">
+                  <span>Mar 28, 2024</span>
+                  <img src="https://www.gstatic.com/images/icons/material/system/1x/grade_grey600_24dp.png" alt="Google" className="w-4 h-4 ml-auto" />
+                </div>
+                <div className="text-yellow-400 text-[16px] leading-none">★★★★★</div>
+                <div className="text-[#29243d] text-sm flex-1 mt-1">
+                  I ordered from Glosy, received a lot of compliments on the products & amazing service, because they went above and beyond.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    </section>
     </>
   );
 };
 
-export default Feature;
+    export default Feature;
