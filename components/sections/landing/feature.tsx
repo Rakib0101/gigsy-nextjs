@@ -251,9 +251,9 @@ const Feature = () => {
         <h2 className="text-center text-[#232329] text-2xl md:text-3xl font-bold mb-8">
           What Our Customers Are Saying About Us
         </h2>
-        <div className="bg-[#f7f9fb] rounded-xl shadow border border-[#eaeaea] p-6 flex flex-col gap-5">
+        <div className="flex flex-col gap-5">
           {/* Header: profile & write review button */}
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 bg-[#f7f9fb] p-6 rounded-xl">
             <div className="flex gap-3 items-center">
               {/* Company logo */}
               <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white p-1.5 border border-[#eaeaea]">
@@ -290,7 +290,7 @@ const Feature = () => {
           {/* Carousel of reviews */}
           <div className="w-full overflow-x-auto">
             <div className="flex gap-3 min-w-[1100px] md:min-w-0 md:justify-center">
-              <div className="w-72 bg-white rounded-lg shadow p-4 flex flex-col gap-1 border border-[#eaeaea]">
+              <div className="w-72 bg-[#f9f9fb] rounded-lg shadow p-4 flex flex-col gap-1">
                 <div className="flex items-center gap-2 text-[#29243d] text-xs opacity-80 mb-1">
                   <span>Mar 30, 2024</span>
                   
@@ -301,7 +301,7 @@ const Feature = () => {
                 </div>
                 <a href="#" className="text-[#466af4] text-xs mt-2 hover:underline">Read More</a>
               </div>
-              <div className="w-72 bg-white rounded-lg shadow p-4 flex flex-col gap-1 border border-[#eaeaea]">
+              <div className="w-72 bg-[#f9f9fb] rounded-lg shadow p-4 flex flex-col gap-1">
                 <div className="flex items-center gap-2 text-[#29243d] text-xs opacity-80 mb-1">
                   <span>Mar 28, 2024</span>
                 </div>
