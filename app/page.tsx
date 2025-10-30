@@ -4,6 +4,7 @@ import Fun from "@/components/sections/landing/fun";
 import Hero from "@/components/sections/landing/hero";
 import Testimonial from "@/components/sections/landing/testimonial";
 import Feature from "@/components/sections/landing/feature";
+import ValueProps from "@/components/sections/landing/value-props";
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
 
       {/* Feature Section */}
       <Feature />
+
+      {/* Value Props Section */}
+      <ValueProps />
     </>
   );
 }
