@@ -34,13 +34,13 @@ export const categoryData = {
       name: "Orbz Balloons",
       slug: "orbz-balloons",
       count: 28,
-      image: "/images/categories/orbz-balloons.jpg",
+      image: "/images/categories/orbz-balloons.webp",
     },
     {
       name: "Specialty Balloons",
       slug: "specialty-balloons",
       count: 42,
-      image: "/images/categories/specialty-balloons.jpg",
+      image: "/images/categories/specialty-balloons.webp",
     },
   ],
   byOccasion: [
@@ -48,13 +48,13 @@ export const categoryData = {
       name: "Back to School",
       slug: "back-to-school",
       count: 15,
-      image: "/images/categories/back-to-school.jpg",
+      image: "/images/categories/back-to-schools.webp",
     },
     {
       name: "Celebration",
       slug: "celebration",
       count: 89,
-      image: "/images/categories/celebration.jpg",
+      image: "/images/categories/celebrations.webp",
     },
     {
       name: "Adult Birthday",
@@ -100,13 +100,13 @@ export const categoryData = {
       name: "Retirement",
       slug: "retirement",
       count: 12,
-      image: "/images/categories/retirement.jpg",
+      image: "/images/categories/retirement.webp",
     },
     {
       name: "Welcome Home",
       slug: "welcome-home",
       count: 18,
-      image: "/images/categories/welcome-home.jpg",
+      image: "/images/categories/welcome-home.webp",
     },
     {
       name: "Anniversary",
@@ -119,7 +119,7 @@ export const categoryData = {
       name: "Get Well Soon",
       slug: "get-well-soon",
       count: 22,
-      image: "/images/categories/get-well-soon.jpg",
+      image: "/images/categories/get-well-soon.webp",
     },
     {
       name: "Graduation",
@@ -134,103 +134,103 @@ export const categoryData = {
       name: "Red",
       slug: "red",
       count: 124,
-      image: "/images/categories/color-red.jpg",
+      image: "/images/categories/red.webp",
     },
     {
       name: "Orange",
       slug: "orange",
       count: 89,
-      image: "/images/categories/color-orange.jpg",
+      image: "/images/categories/orange.webp",
     },
     {
       name: "Yellow",
       slug: "yellow",
       count: 98,
-      image: "/images/categories/color-yellow.jpg",
+      image: "/images/categories/yellow.webp",
     },
     {
       name: "Green",
       slug: "green",
       count: 112,
-      image: "/images/categories/color-green.jpg",
+      image: "/images/categories/green.webp",
     },
     {
       name: "Blue",
       slug: "blue",
       count: 134,
-      image: "/images/categories/color-blue.jpg",
+      image: "/images/categories/blue.webp",
     },
     {
       name: "Purple",
       slug: "purple",
       count: 76,
-      image: "/images/categories/color-purple.jpg",
+      image: "/images/categories/purple.webp",
     },
     {
       name: "Pink",
       slug: "pink",
       count: 145,
-      image: "/images/categories/color-pink.jpg",
+      image: "/images/categories/pink.webp",
     },
     {
       name: "Rose Gold",
       slug: "rose-gold",
       count: 56,
-      image: "/images/categories/color-rose-gold.jpg",
+      image: "/images/categories/rose-gold.webp",
     },
     {
       name: "White & Clear",
       slug: "white-clear",
       count: 98,
-      image: "/images/categories/color-white.jpg",
+      image: "/images/categories/white-clear.webp",
     },
     {
       name: "Black",
       slug: "black",
       count: 45,
-      image: "/images/categories/color-black.jpg",
+      image: "/images/categories/black.webp",
     },
     {
       name: "Silver & Grey",
       slug: "silver-grey",
       count: 67,
-      image: "/images/categories/color-silver.jpg",
+      image: "/images/categories/silver-gray.webp",
     },
     {
       name: "Gold",
       slug: "gold",
       count: 78,
-      image: "/images/categories/color-gold.jpg",
+      image: "/images/categories/gold.webp",
     },
     {
       name: "Ivory & Neutrals",
       slug: "ivory-neutrals",
       count: 56,
-      image: "/images/categories/color-ivory.jpg",
+      image: "/images/categories/ivory.webp",
     },
     {
       name: "Metallic",
       slug: "metallic",
       count: 89,
-      image: "/images/categories/color-metallic.jpg",
+      image: "/images/categories/metallic.webp",
     },
     {
       name: "Rainbow",
       slug: "rainbow",
       count: 34,
-      image: "/images/categories/color-rainbow.jpg",
+      image: "/images/categories/rainbow.webp",
     },
     {
       name: "Confetti",
       slug: "confetti",
       count: 52,
-      image: "/images/categories/color-confetti.jpg",
+      image: "/images/categories/confetti.webp",
     },
     {
       name: "Animal Print",
       slug: "animal-print",
       count: 28,
-      image: "/images/categories/color-animal-print.jpg",
+      image: "/images/categories/animal-print.webp",
     },
   ],
   byShape: [
@@ -238,25 +238,25 @@ export const categoryData = {
       name: "Heart",
       slug: "heart",
       count: 156,
-      image: "/images/categories/shape-heart.jpg",
+      image: "/images/categories/hearts.webp",
     },
     {
       name: "Star",
       slug: "star",
       count: 78,
-      image: "/images/categories/shape-star.jpg",
+      image: "/images/categories/stars.webp",
     },
     {
       name: "Round",
       slug: "round",
       count: 234,
-      image: "/images/categories/shape-round.jpg",
+      image: "/images/categories/round.webp",
     },
     {
       name: "Orbz",
       slug: "orbz",
       count: 45,
-      image: "/images/categories/shape-orbz.jpg",
+      image: "/images/categories/orbz.webp",
     },
   ],
   byHoliday: [
@@ -438,7 +438,7 @@ export const categoryData = {
         count: 45,
         image: "/images/categories/theme-licensed.webp",
         featured: true,
-      }
+      },
     ],
     licensed: [
       {
@@ -521,4 +521,24 @@ export const getFeaturedSquareCategories = () => {
 
 export const getFeaturedThemes = () => {
   return categoryData.byTheme.classic.filter((cat) => cat.featured);
+};
+
+export const getBalloonsByOccasion = () => {
+  return categoryData.byOccasion;
+};
+
+export const getBalloonsByType = () => {
+  return categoryData.byType;
+};
+
+export const getBalloonsByShape = () => {
+  return categoryData.byShape;
+};
+
+export const getBalloonsByColor = () => {
+  return categoryData.byColor;
+};
+
+export const getBalloonsByHoliday = () => {
+  return categoryData.byHoliday;
 };
