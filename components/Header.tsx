@@ -18,11 +18,28 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Load cart items from localStorage or API
-    const cart = localStorage.getItem("cart");
-    if (cart) {
-      setCartItems(JSON.parse(cart).length);
-    }
+    // Load cart items from localStorage
+    const loadCart = () => {
+      if (typeof window !== "undefined") {
+        const cart = localStorage.getItem("cart");
+        if (cart) {
+          const cartItems = JSON.parse(cart);
+          const totalQuantity = cartItems.reduce(
+            (sum: number, item: any) => sum + (item.quantity || 1),
+            0
+          );
+          setCartItems(totalQuantity);
+        } else {
+          setCartItems(0);
+        }
+      }
+    };
+
+    loadCart();
+
+    // Listen for cart updates
+    window.addEventListener("cartUpdated", loadCart);
+    return () => window.removeEventListener("cartUpdated", loadCart);
   }, []);
 
   useEffect(() => {

@@ -2,6 +2,7 @@
 
 import ProductCard from "@/components/global/product-card";
 import { getFeaturedProducts, products } from "@/data/products";
+import { addToCart } from "@/lib/cart";
 import {
   faFacebook,
   faPinterest,
@@ -114,15 +115,10 @@ const ProductDetailsPage = () => {
       quantity,
       image: selectedColor.image,
       slug: "weights-accessories-details",
+      color: selectedColor.name,
     };
 
-    const existingCart = localStorage.getItem("cart");
-    const cart = existingCart ? JSON.parse(existingCart) : [];
-    cart.push(cartItem);
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    // Trigger cart update event
-    window.dispatchEvent(new Event("cartUpdated"));
+    addToCart(cartItem);
 
     // Show success message (optional - could add toast notification)
     alert("Added to cart!");

@@ -1,6 +1,7 @@
 "use client";
 
 import { Product } from "@/data/products";
+import { addToCart } from "@/lib/cart";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -18,28 +19,19 @@ export default function ProductCard({ product, colorCount }: ProductCardProps) {
   const hasSale = !!product.salePrice;
 
   const handleAddToCart = () => {
-    // TODO: Implement add to cart functionality
-    console.log("Adding to cart:", { product: product.id, quantity });
-
-    // Load existing cart from localStorage
-    const existingCart = localStorage.getItem("cart");
-    const cart = existingCart ? JSON.parse(existingCart) : [];
-
-    // Add item to cart
     const cartItem = {
       id: product.id,
       name: product.name,
       price: displayPrice,
       quantity,
-      image: product.images[0],
+      image: product.images[0] || "/images/placeholder.jpg",
       slug: product.slug,
     };
 
-    cart.push(cartItem);
-    localStorage.setItem("cart", JSON.stringify(cart));
+    addToCart(cartItem);
 
-    // Trigger cart update event (for Header to update cart count)
-    window.dispatchEvent(new Event("cartUpdated"));
+    // Reset quantity after adding to cart
+    setQuantity(1);
   };
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
