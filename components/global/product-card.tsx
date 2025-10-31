@@ -2,6 +2,7 @@
 
 import { Product } from "@/data/products";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface ProductCardProps {
@@ -47,7 +48,8 @@ export default function ProductCard({ product, colorCount }: ProductCardProps) {
   };
 
   return (
-    <div
+    <Link
+      href={`/${product.slug}`}
       className="group relative bg-white"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -136,6 +138,6 @@ export default function ProductCard({ product, colorCount }: ProductCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

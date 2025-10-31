@@ -41,7 +41,7 @@ const ContactPage = () => {
               className="text-4xl font-bold mb-2 text-gray-900"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              CAN'T FIND WHAT YOU NEED?
+              CAN&apos;T FIND WHAT YOU NEED?
             </h1>
             <p
               className="text-lg text-gray-600"
