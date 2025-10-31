@@ -32,19 +32,19 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-52 pb-20">
+    <div className="min-h-screen bg-white pb-12 md:pb-20">
       <div className="container mx-auto px-4">
-        <div className="bg-[#f9f3f1] rounded-xl p-12 max-w-4xl mx-auto">
+        <div className="bg-[#f9f3f1] rounded-xl p-6 md:p-8 lg:p-12 max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
             <h1
-              className="text-4xl font-bold mb-2 text-gray-900"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 text-gray-900"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               CAN&apos;T FIND WHAT YOU NEED?
             </h1>
             <p
-              className="text-lg text-gray-600"
+              className="text-base md:text-lg text-gray-600"
               style={{ fontFamily: "'Lato', sans-serif" }}
             >
               Contact our Customer Service Team
@@ -52,7 +52,7 @@ const ContactPage = () => {
           </div>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Section - Contact Form */}
             <div>
               <form onSubmit={handleSubmit} className="space-y-6">

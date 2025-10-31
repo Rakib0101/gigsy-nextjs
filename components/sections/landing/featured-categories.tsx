@@ -12,7 +12,7 @@ const FeaturedCategories = () => {
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
         {/* Title */}
-        <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-16 tracking-wide">
+        <h2 className="text-center text-4xl lg:text-5xl font-bold font-serif text-[#2c2c2c] mb-16 tracking-wide">
           FEATURED COLLECTIONS
         </h2>
 
@@ -22,7 +22,7 @@ const FeaturedCategories = () => {
             <Link
               key={category.slug}
               href={`/categories/${category.slug}`}
-              className="group flex flex-col items-center max-w-[132px]"
+              className="group flex flex-col items-center max-w-[100px] md:max-w-[132px]"
             >
               {/* Circular Image Container */}
               <Image
@@ -39,19 +39,19 @@ const FeaturedCategories = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-32">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-6 pt-20 lg:pt-32">
           {featuredSquareCategories.map((category) => (
             <Link
               key={category.slug}
               href={`/categories/${category.slug}`}
-              className="p-8 flex flex-col items-center bg-[#2C2C2C] rounded-lg shadow-md group hover:scale-105 transition-transform duration-300"
+              className="p-4 md:p-8 flex flex-col items-center bg-[#2C2C2C] rounded-lg shadow-md group hover:scale-105 transition-transform duration-300"
             >
               <Image
                 src={category.image}
                 alt={category.name}
                 width={130}
                 height={180}
-                className="object-contain w-full h-auto -mt-20 mx-auto"
+                className="object-contain w-full h-auto -mt-12 md:-mt-20 mx-auto"
                 draggable={false}
                 priority
               />

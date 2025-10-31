@@ -1,17 +1,11 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTruck,
-  faBox,
-  faGift,
-  faHeadset,
-} from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faInstagram,
   faPinterest,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -20,15 +14,20 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-12">
           {/* Newsletter Signup */}
           <div className="mb-12">
-            <h6 className="font-bold text-center mb-4 text-4xl">GET OUR NEWSLETTER</h6>
-            <p className="text-center text-gray-100 text-lg mb-8">Exclusive discounts, early access to new products, and special content.</p>
-            <div className="flex justify-center gap-2 max-w-md mx-auto">
+            <h6 className="font-bold text-center mb-4 text-2xl md:text-3xl lg:text-4xl">
+              GET OUR NEWSLETTER
+            </h6>
+            <p className="text-center text-gray-100 text-base md:text-lg mb-6 md:mb-8 px-4">
+              Exclusive discounts, early access to new products, and special
+              content.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-2 max-w-md mx-auto px-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-transparent border border-white text-gray-800 rounded-l"
+                className="flex-1 px-4 py-2 bg-transparent border border-white text-white placeholder-gray-300 rounded sm:rounded-l sm:rounded-r-none"
               />
-              <button className="bg-white text-gray-800 hover:bg-[#ff5252] px-6 py-2 rounded-r font-semibold transition">
+              <button className="bg-white text-gray-800 hover:bg-[#ff5252] px-6 py-2 rounded sm:rounded-r sm:rounded-l-none font-semibold transition whitespace-nowrap">
                 <span className="text-gray-800">SIGN UP</span>
               </button>
             </div>
@@ -87,7 +86,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="text-right">
+          <div className="text-left md:text-right">
             <h6 className="font-bold mb-4">NEED HELP?</h6>
             <p className="text-gray-400 mb-2">(555) 123-4567</p>
             <p className="text-gray-400">

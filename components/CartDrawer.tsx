@@ -64,7 +64,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
       ></div>
 
       <div
-        className={`cart-drawer fixed top-0 -right-[400px] w-[400px] h-full bg-white shadow-[-2px_0_10px_rgba(0,0,0,0.1)] z-[9999] overflow-y-auto transition-all duration-300 ${
+        className={`cart-drawer fixed top-0 -right-full w-full md:w-[400px] h-full bg-white shadow-[-2px_0_10px_rgba(0,0,0,0.1)] z-[9999] overflow-y-auto transition-all duration-300 ${
           isOpen ? "right-0" : ""
         }`}
       >

@@ -8,10 +8,10 @@ const FeaturedThemes = () => {
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center flex flex-col items-center gap-4">
-          <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-2 tracking-wide">
+          <h2 className="text-center text-4xl md:text-5xl font-bold font-serif text-[#2c2c2c] mb-2 tracking-wide">
             FEATURED THEMES
           </h2>
-          <p>
+          <p className="text-base md:text-lg text-gray-500">
             Explore our collection of balloons for your next themed occasion
           </p>
           <Link
@@ -21,9 +21,13 @@ const FeaturedThemes = () => {
             Shop All
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-12">
           {themes.map((theme) => (
-            <Link key={theme.slug} href={`/categories/theme/${theme.slug}`} className="group relative rounded-lg overflow-hidden border border-gray-200 hover:scale-105 transition-transform duration-300">
+            <Link
+              key={theme.slug}
+              href={`/categories/theme/${theme.slug}`}
+              className="group relative rounded-lg overflow-hidden border border-gray-200 hover:scale-105 transition-transform duration-300"
+            >
               <Image
                 src={theme.image}
                 alt={theme.name}
@@ -38,9 +42,9 @@ const FeaturedThemes = () => {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 items-center justify-center">
+        <div className="mt-8 md:mt-16 grid grid-cols-1 lg:grid-cols-3 items-center justify-center gap-4 lg:gap-0">
           {/* Left: Image */}
-          <div className="col-span-2">
+          <div className="lg:col-span-2">
             <Image
               src="/images/theme-by-occasion.webp"
               alt="Gift Giving Heart Balloons"
@@ -51,16 +55,17 @@ const FeaturedThemes = () => {
             />
           </div>
           {/* Right: Text box */}
-          <div className="flex-1 w-full -ml-[20%] bg-[#f7f5f2] rounded-xl px-8 py-8 flex flex-col justify-center items-start shadow border border-gray-200 min-h-[210px]">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#232329] mb-3 leading-snug uppercase">
+          <div className="flex-1 w-full lg:-ml-[20%] bg-[#f7f5f2] rounded-xl px-6 md:px-8 py-6 md:py-8 flex flex-col justify-center items-start shadow border border-gray-200 min-h-[210px] relative lg:relative z-10">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-[#232329] mb-3 leading-snug uppercase">
               Gift Giving Made Easy. Imagine That.
             </h3>
-            <p className="mb-6 text-base text-[#46444e] font-medium">
-              Because choosing someone a one-of-a-kind balloon should be as sweet as it sounds.
+            <p className="mb-6 text-sm md:text-base text-[#46444e] font-medium">
+              Because choosing someone a one-of-a-kind balloon should be as
+              sweet as it sounds.
             </p>
             <Link
               href="/categories/theme/occasion"
-              className="inline-block text-lg uppercase font-semibold mt-auto px-6 py-3 border border-gray-900 text-gray-900 rounded-xl hover:bg-gray-900 hover:text-white transition"
+              className="inline-block text-base md:text-lg uppercase font-semibold mt-auto px-4 md:px-6 py-2 md:py-3 border border-gray-900 text-gray-900 rounded-xl hover:bg-gray-900 hover:text-white transition"
             >
               Shop Balloons by Occasion
             </Link>
