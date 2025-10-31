@@ -501,6 +501,7 @@ export const getAllCategories = () => {
     categories.push({ ...item, type: "theme-licensed" });
   });
 
+
   return categories;
 };
 
