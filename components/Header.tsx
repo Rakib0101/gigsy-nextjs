@@ -287,7 +287,7 @@ export default function Header() {
                           {categoryData.byType.map((item) => (
                             <li key={item.slug} className="mb-0.5">
                               <Link
-                                href={`/categories/type/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
@@ -310,7 +310,7 @@ export default function Header() {
                           {categoryData.byOccasion.map((item) => (
                             <li key={item.slug} className="mb-0.5">
                               <Link
-                                href={`/categories/occasion/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
@@ -333,7 +333,7 @@ export default function Header() {
                           {categoryData.byColor.map((item) => (
                             <li key={item.slug} className="mb-0.5">
                               <Link
-                                href={`/categories/color/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
@@ -356,7 +356,7 @@ export default function Header() {
                           {categoryData.byShape.map((item) => (
                             <li key={item.slug} className="mb-0.5">
                               <Link
-                                href={`/categories/shape/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
@@ -379,7 +379,7 @@ export default function Header() {
                           {categoryData.byHoliday.map((item) => (
                             <li key={item.slug} className="mb-0.5">
                               <Link
-                                href={`/categories/holiday/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
@@ -408,7 +408,7 @@ export default function Header() {
                           {categoryData.byTheme.classic.map((item) => (
                             <li key={item.slug} className="mb-0.5">
                               <Link
-                                href={`/categories/theme/classic/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
@@ -427,7 +427,7 @@ export default function Header() {
                           {categoryData.byTheme.licensed.map((item) => (
                             <li key={item.slug} className="mb-0.5">
                               <Link
-                                href={`/categories/theme/licensed/${item.slug}`}
+                                href={`${item.slug}`}
                                 className="text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{ fontFamily: "'Lato', sans-serif" }}
                               >
@@ -443,9 +443,9 @@ export default function Header() {
               </li>
               <li className="relative">
                 <Link
-                  href="/weights-accessories"
+                  href="/collections/weights-accessories"
                   className={`inline-block text-gray-700 no-underline text-lg font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition ${
-                    pathname?.startsWith("/weights-accessories")
+                    pathname?.startsWith("/collections/weights-accessories")
                       ? "border-b-2 border-gray-900"
                       : ""
                   }`}
@@ -618,7 +618,7 @@ export default function Header() {
                           {categoryData.byType.map((item) => (
                             <li key={item.slug}>
                               <Link
-                                href={`/categories/type/${item.slug}`}
+                                href={`${item.slug}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block py-2 text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{
@@ -670,7 +670,7 @@ export default function Header() {
                           {categoryData.byOccasion.map((item) => (
                             <li key={item.slug}>
                               <Link
-                                href={`/categories/occasion/${item.slug}`}
+                                href={`${item.slug}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block py-2 text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{
@@ -722,7 +722,7 @@ export default function Header() {
                           {categoryData.byColor.map((item) => (
                             <li key={item.slug}>
                               <Link
-                                href={`/categories/color/${item.slug}`}
+                                href={`${item.slug}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block py-2 text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{
@@ -774,7 +774,7 @@ export default function Header() {
                           {categoryData.byShape.map((item) => (
                             <li key={item.slug}>
                               <Link
-                                href={`/categories/shape/${item.slug}`}
+                                href={`${item.slug}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block py-2 text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{
@@ -826,7 +826,7 @@ export default function Header() {
                           {categoryData.byHoliday.map((item) => (
                             <li key={item.slug}>
                               <Link
-                                href={`/categories/holiday/${item.slug}`}
+                                href={`${item.slug}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block py-2 text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                 style={{
@@ -888,7 +888,7 @@ export default function Header() {
                               {categoryData.byTheme.classic.map((item) => (
                                 <li key={item.slug}>
                                   <Link
-                                    href={`/categories/theme/classic/${item.slug}`}
+                                    href={`${item.slug}`}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="block py-2 text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                     style={{
@@ -914,7 +914,7 @@ export default function Header() {
                               {categoryData.byTheme.licensed.map((item) => (
                                 <li key={item.slug}>
                                   <Link
-                                    href={`/categories/theme/licensed/${item.slug}`}
+                                    href={`${item.slug}`}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="block py-2 text-gray-600 no-underline text-sm uppercase font-normal hover:text-[#ff6b6b] transition"
                                     style={{
@@ -936,10 +936,10 @@ export default function Header() {
 
               <li className="border-b border-gray-100">
                 <Link
-                  href="/weights-accessories"
+                  href="/collections/weights-accessories"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-4 text-gray-700 no-underline text-base font-semibold tracking-wide uppercase hover:text-gray-900 transition ${
-                    pathname?.startsWith("/weights-accessories")
+                    pathname?.startsWith("/collections/weights-accessories")
                       ? "text-gray-900"
                       : ""
                   }`}

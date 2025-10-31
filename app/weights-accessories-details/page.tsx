@@ -174,7 +174,7 @@ const ProductDetailsPage = () => {
             </Link>
             <span className="text-gray-400">/</span>
             <Link
-              href="/weights-accessories"
+              href="/collections/weights-accessories"
               className="hover:text-gray-900 transition uppercase tracking-wide"
               style={{ fontFamily: "'Lato', sans-serif" }}
             >
