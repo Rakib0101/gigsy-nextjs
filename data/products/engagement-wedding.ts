@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createEngagementWeddingProducts = () => {
   const products = [];
-  for (let i = 1; i <= 34; i++) {
+  for (let i = 1; i <= 14; i++) {
     products.push({
       id: `engagement-wedding-${i}`,
       name: "Engagement & Wedding Balloon",
       slug: "engagement-wedding-details",
       price: 12.0,
       description: "Perfect for engagement & wedding",
-      images: [`/images/products/engagement-wedding/engagement-wedding-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/engagement/engagement-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "occasion",
         occasion: "engagement-wedding",
@@ -23,7 +27,8 @@ const createEngagementWeddingProducts = () => {
   return products;
 };
 
-export const engagementweddingProducts: Product[] = createEngagementWeddingProducts();
+export const engagementweddingProducts: Product[] =
+  createEngagementWeddingProducts();
 
 export const getEngagementWeddingProducts = (): Product[] => {
   return engagementweddingProducts;

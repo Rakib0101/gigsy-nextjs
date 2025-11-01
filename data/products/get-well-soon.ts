@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createGetWellSoonProducts = () => {
   const products = [];
-  for (let i = 1; i <= 22; i++) {
+  for (let i = 1; i <= 8; i++) {
     products.push({
       id: `get-well-soon-${i}`,
       name: "Get Well Soon Balloon",
       slug: "get-well-soon-details",
       price: 12.0,
       description: "Perfect for get well soon",
-      images: [`/images/products/get-well-soon/get-well-soon-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/get-well-soon/get-well-soon-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "occasion",
         occasion: "get-well-soon",

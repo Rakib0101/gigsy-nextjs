@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createGraduationProducts = () => {
   const products = [];
-  for (let i = 1; i <= 31; i++) {
+  for (let i = 1; i <= 16; i++) {
     products.push({
       id: `graduation-${i}`,
       name: "Graduation Balloon",
       slug: "graduation-details",
       price: 12.0,
       description: "Perfect for graduation",
-      images: [`/images/products/graduation/graduation-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/graduation/graduation-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "occasion",
         occasion: "graduation",

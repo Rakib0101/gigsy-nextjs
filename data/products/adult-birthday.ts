@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createAdultBirthdayProducts = () => {
   const products = [];
-  for (let i = 1; i <= 56; i++) {
+  for (let i = 1; i <= 18; i++) {
     products.push({
       id: `adult-birthday-${i}`,
       name: "Adult Birthday Balloon",
       slug: "adult-birthday-details",
       price: 12.0,
       description: "Perfect for adult birthday",
-      images: [`/images/products/adult-birthday/adult-birthday-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/adult-birthday/adult-birthday-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "occasion",
         occasion: "adult-birthday",

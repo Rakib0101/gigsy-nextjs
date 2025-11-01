@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createWelcomeHomeProducts = () => {
   const products = [];
-  for (let i = 1; i <= 18; i++) {
+  for (let i = 1; i <= 2; i++) {
     products.push({
       id: `welcome-home-${i}`,
       name: "Welcome Home Balloon",
       slug: "welcome-home-details",
       price: 12.0,
       description: "Perfect for welcome home",
-      images: [`/images/products/welcome-home/welcome-home-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/welcome-home/welcome-home-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "occasion",
         occasion: "welcome-home",

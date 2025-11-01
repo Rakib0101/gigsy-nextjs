@@ -64,13 +64,6 @@ export const categoryData = {
       featured: true,
     },
     {
-      name: "Kid Birthday",
-      slug: "/collections/kid-birthday",
-      count: 100,
-      image: "/images/categories/kid-birthday.webp",
-      featured: true,
-    },
-    {
       name: "Boy Birthday",
       slug: "/collections/boy-birthday",
       count: 48,
