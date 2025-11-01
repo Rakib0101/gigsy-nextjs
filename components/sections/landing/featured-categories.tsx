@@ -21,7 +21,7 @@ const FeaturedCategories = () => {
           {featuredCategories.map((category) => (
             <Link
               key={category.slug}
-              href={`/categories/${category.slug}`}
+              href={`/${category.slug}`}
               className="group flex flex-col items-center max-w-[100px] md:max-w-[132px]"
             >
               {/* Circular Image Container */}
@@ -43,7 +43,7 @@ const FeaturedCategories = () => {
           {featuredSquareCategories.map((category) => (
             <Link
               key={category.slug}
-              href={`/categories/${category.slug}`}
+              href={`/${category.slug}`}
               className="p-4 md:p-8 flex flex-col items-center bg-[#2C2C2C] rounded-lg shadow-md group hover:scale-105 transition-transform duration-300"
             >
               <Image

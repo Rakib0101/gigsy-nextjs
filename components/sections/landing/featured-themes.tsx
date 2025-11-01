@@ -25,7 +25,7 @@ const FeaturedThemes = () => {
           {themes.map((theme) => (
             <Link
               key={theme.slug}
-              href={`/categories/theme/${theme.slug}`}
+              href={`/theme/${theme.slug}`}
               className="group relative rounded-lg overflow-hidden border border-gray-200 hover:scale-105 transition-transform duration-300"
             >
               <Image
@@ -64,7 +64,7 @@ const FeaturedThemes = () => {
               sweet as it sounds.
             </p>
             <Link
-              href="/categories/theme/occasion"
+              href="/theme/occasion"
               className="inline-block text-base md:text-lg uppercase font-semibold mt-auto px-4 md:px-6 py-2 md:py-3 border border-gray-900 text-gray-900 rounded-xl hover:bg-gray-900 hover:text-white transition"
             >
               Shop Balloons by Occasion

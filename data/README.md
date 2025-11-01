@@ -64,7 +64,7 @@ import {
 1. Open `data/categories.ts`
 2. Find the appropriate section (byType, byOccasion, etc.)
 3. Add your category object with `name`, `slug`, `count`, and `image`
-4. Add the corresponding image to `public/images/categories/` folder
+4. Add the corresponding image to `public/images/` folder
 5. The mega menu will automatically update
 
 ### Adding a Product
