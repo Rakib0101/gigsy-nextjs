@@ -115,11 +115,11 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <a
-                    href="mailto:hello@getgigsy.com"
+                    href="mailto:hello@getjoyinflate.com"
                     className="text-gray-800 hover:text-gray-600 transition text-base"
                     style={{ fontFamily: "'Lato', sans-serif" }}
                   >
-                    hello@getgigsy.com
+                    hello@getjoyinflate.com
                   </a>
                 </div>
               </div>
