@@ -14,7 +14,7 @@ const CollectionsPage = () => {
   const balloonsByColor = getBalloonsByColor();
   return (
     <>
-      <section className="py-20 px-4 bg-white">
+      <section className="pt-40 pb-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           {/* Title */}
           <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-16 tracking-wide">
@@ -26,7 +26,7 @@ const CollectionsPage = () => {
             {balloonsByOccasion.map((category) => (
               <Link
                 key={category.slug}
-                href={`/${category.slug}`}
+                href={`${category.slug}`}
                 className="group flex flex-col items-center max-w-[132px]"
               >
                 {/* Circular Image Container */}
@@ -45,7 +45,7 @@ const CollectionsPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 px-4 bg-white">
+      <section className="pt-40 pb-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           {/* Title */}
           <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-16 tracking-wide">
@@ -76,7 +76,7 @@ const CollectionsPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 px-4 bg-white">
+      <section className="pt-40 pb-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           {/* Title */}
           <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-16 tracking-wide">
@@ -107,7 +107,7 @@ const CollectionsPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 px-4 bg-white">
+      <section className="pt-40 pb-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           {/* Title */}
           <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-16 tracking-wide">

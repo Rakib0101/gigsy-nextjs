@@ -5,7 +5,7 @@ import Link from "next/link";
 const FeaturedThemes = () => {
   const themes = getFeaturedThemes();
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="pt-40 pb-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center flex flex-col items-center gap-4">
           <h2 className="text-center text-4xl md:text-5xl font-bold font-serif text-[#2c2c2c] mb-2 tracking-wide">

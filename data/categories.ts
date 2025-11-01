@@ -18,7 +18,7 @@ export const categoryData = {
     },
     {
       name: "Foil Shapes",
-      slug: "/collections/foil-shapes",
+      slug: "/balloons-by-shape",
       count: 38,
       image: "/images/categories/foil-balloons.webp",
       featuredSquare: true,
@@ -28,6 +28,13 @@ export const categoryData = {
       slug: "/collections/orbz-balloons",
       count: 28,
       image: "/images/categories/orbz-balloons.webp",
+    },
+    {
+      name: "Latex Balloons",
+      slug: "/latex-balloons-by-size",
+      count: 67,
+      image: "/images/categories/latex-balloons.webp",
+      featuredSquare: true,
     },
   ],
   byOccasion: [

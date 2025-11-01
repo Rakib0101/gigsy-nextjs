@@ -254,9 +254,9 @@ export default function Header() {
                 onMouseLeave={() => setIsMegaMenuOpen(false)}
               >
                 <Link
-                  href="/shop"
+                  href="/collections"
                   className={`inline-block text-gray-700 no-underline text-lg font-semibold tracking-wide uppercase pb-1.5 relative hover:text-gray-900 transition ${
-                    pathname?.startsWith("/shop")
+                    pathname?.startsWith("/collections")
                       ? "border-b-2 border-gray-900"
                       : ""
                   }`}
@@ -548,7 +548,7 @@ export default function Header() {
                 <button
                   onClick={() => toggleMobileCategory("shop")}
                   className={`w-full flex items-center justify-between py-4 text-gray-700 no-underline text-base font-semibold tracking-wide uppercase hover:text-gray-900 transition ${
-                    pathname?.startsWith("/shop") ? "text-gray-900" : ""
+                    pathname?.startsWith("/collections") ? "text-gray-900" : ""
                   }`}
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >

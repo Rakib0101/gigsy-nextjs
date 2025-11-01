@@ -32,7 +32,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white pb-12 md:pb-20">
+    <div className="min-h-screen bg-white pt-32 pb-12 md:pb-16">
       <div className="container mx-auto px-4">
         <div className="bg-[#f9f3f1] rounded-xl p-6 md:p-8 lg:p-12 max-w-4xl mx-auto">
           {/* Header */}
