@@ -24,23 +24,10 @@ export const categoryData = {
       featuredSquare: true,
     },
     {
-      name: "Latex Balloons",
-      slug: "/collections/latex-balloons",
-      count: 67,
-      image: "/images/categories/latex-balloons.webp",
-      featuredSquare: true,
-    },
-    {
       name: "Orbz Balloons",
       slug: "/collections/orbz-balloons",
       count: 28,
       image: "/images/categories/orbz-balloons.webp",
-    },
-    {
-      name: "Specialty Balloons",
-      slug: "/collections/specialty-balloons",
-      count: 42,
-      image: "/images/categories/specialty-balloons.webp",
     },
   ],
   byOccasion: [

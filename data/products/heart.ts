@@ -2,7 +2,7 @@ import { Product } from "../products";
 
 const createHeartProducts = () => {
   const products = [];
-  for (let i = 1; i <= 15; i++) {
+  for (let i = 1; i <= 18; i++) {
     products.push({
       id: `heart-${i}`,
       name: "Heart Balloon",

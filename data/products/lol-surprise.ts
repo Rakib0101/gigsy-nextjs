@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createLOLSurpriseProducts = () => {
   const products = [];
-  for (let i = 1; i <= 28; i++) {
+  for (let i = 1; i <= 1; i++) {
     products.push({
       id: `lol-surprise-${i}`,
       name: "LOL Surprise Balloon",
       slug: "lol-surprise-details",
       price: 12.0,
       description: "Perfect for lol surprise",
-      images: [`/images/products/lol-surprise/lol-surprise-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/lol-surprise/lol-surprise-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "theme",
         theme: "lol-surprise",

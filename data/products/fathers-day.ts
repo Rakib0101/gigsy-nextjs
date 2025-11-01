@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createFathersDayProducts = () => {
   const products = [];
-  for (let i = 1; i <= 42; i++) {
+  for (let i = 1; i <= 1; i++) {
     products.push({
       id: `fathers-day-${i}`,
       name: "Father's Day Balloon",
       slug: "fathers-day-details",
       price: 12.0,
       description: "Perfect for father's day",
-      images: [`/images/products/fathers-day/fathers-day-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/fathers-day/fathers-day-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "holiday",
         holiday: "fathers-day",

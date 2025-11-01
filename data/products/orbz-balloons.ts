@@ -2,7 +2,7 @@ import { Product } from "../products";
 
 const createOrbzBalloons = () => {
   const balloons = [];
-  for (let i = 1; i <= 28; i++) {
+  for (let i = 1; i <= 9; i++) {
     balloons.push({
       id: `orbz-balloon-${i}`,
       name: "Orbz Balloon",
@@ -10,9 +10,7 @@ const createOrbzBalloons = () => {
       price: 20.0,
       description: "Unique Orbz balloon design",
       images: [
-        `/images/products/orbz-balloons/orbz-${i
-          .toString()
-          .padStart(2, "0")}.webp`,
+        `/images/products/orbz/orbz-${i.toString().padStart(2, "0")}.webp`,
       ],
       category: {
         type: "orbz-balloons",

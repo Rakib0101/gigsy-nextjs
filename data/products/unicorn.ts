@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createUnicornProducts = () => {
   const products = [];
-  for (let i = 1; i <= 45; i++) {
+  for (let i = 1; i <= 5; i++) {
     products.push({
       id: `unicorn-${i}`,
       name: "Unicorn Balloon",
       slug: "unicorn-details",
       price: 12.0,
       description: "Perfect for unicorn",
-      images: [`/images/products/unicorn/unicorn-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/unicorn/unicorn-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "theme",
         theme: "unicorn",

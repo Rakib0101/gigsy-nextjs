@@ -2,14 +2,16 @@ import { Product } from "../products";
 
 const createBarbieProducts = () => {
   const products = [];
-  for (let i = 1; i <= 38; i++) {
+  for (let i = 1; i <= 2; i++) {
     products.push({
       id: `barbie-${i}`,
       name: "Barbie Balloon",
       slug: "barbie-details",
       price: 12.0,
       description: "Perfect for barbie",
-      images: [`/images/products/barbie/barbie-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/barbie/barbie-${i.toString().padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "theme",
         theme: "barbie",

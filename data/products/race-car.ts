@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createRaceCarProducts = () => {
   const products = [];
-  for (let i = 1; i <= 19; i++) {
+  for (let i = 1; i <= 2; i++) {
     products.push({
       id: `race-car-${i}`,
       name: "Race Car Balloon",
       slug: "race-car-details",
       price: 12.0,
       description: "Perfect for race car",
-      images: [`/images/products/race-car/race-car-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/race-car/race-car-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "theme",
         theme: "race-car",

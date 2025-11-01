@@ -10,9 +10,7 @@ const createIvoryNeutralsBalloons = () => {
       price: 10.0,
       description: "14 Colors",
       images: [
-        `/images/products/ivory-neutrals/ivory-neutrals-${i
-          .toString()
-          .padStart(2, "0")}.webp`,
+        `/images/products/ivory/ivory-${i.toString().padStart(2, "0")}.webp`,
       ],
       category: {
         type: "color-balloons",

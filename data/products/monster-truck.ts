@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createMonsterTruckProducts = () => {
   const products = [];
-  for (let i = 1; i <= 16; i++) {
+  for (let i = 1; i <= 2; i++) {
     products.push({
       id: `monster-truck-${i}`,
       name: "Monster Truck Balloon",
       slug: "monster-truck-details",
       price: 12.0,
       description: "Perfect for monster truck",
-      images: [`/images/products/monster-truck/monster-truck-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/monster-truck/monster-truck-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "theme",
         theme: "monster-truck",
