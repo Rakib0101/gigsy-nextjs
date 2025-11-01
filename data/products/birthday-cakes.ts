@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createBirthdayCakesProducts = () => {
   const products = [];
-  for (let i = 1; i <= 52; i++) {
+  for (let i = 1; i <= 8; i++) {
     products.push({
       id: `birthday-cakes-${i}`,
       name: "Birthday Cakes Balloon",
       slug: "birthday-cakes-details",
       price: 12.0,
       description: "Perfect for birthday cakes",
-      images: [`/images/products/birthday-cakes/birthday-cakes-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/birthday/birthday-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "theme",
         theme: "birthday-cakes",

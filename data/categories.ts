@@ -196,7 +196,7 @@ export const categoryData = {
     },
     {
       name: "Rainbow",
-      slug: "/collections/rainbow",
+      slug: "/collections/rainbows",
       count: 34,
       image: "/images/categories/rainbow.webp",
     },
@@ -323,7 +323,7 @@ export const categoryData = {
     classic: [
       {
         name: "Classic Themes",
-        slug: "/collections/classic-themes",
+        slug: "/collections",
         count: 78,
         image: "/images/categories/theme-01.webp",
       },

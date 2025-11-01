@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createSaintPatricksDayProducts = () => {
   const products = [];
-  for (let i = 1; i <= 28; i++) {
+  for (let i = 1; i <= 4; i++) {
     products.push({
       id: `saint-patricks-day-${i}`,
       name: "Saint Patrick's Day Balloon",
       slug: "saint-patricks-day-details",
       price: 12.0,
       description: "Perfect for saint patrick's day",
-      images: [`/images/products/saint-patricks-day/saint-patricks-day-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/saint-patricks/saint-patricks-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "holiday",
         holiday: "saint-patricks-day",
@@ -23,7 +27,8 @@ const createSaintPatricksDayProducts = () => {
   return products;
 };
 
-export const saintpatricksdayProducts: Product[] = createSaintPatricksDayProducts();
+export const saintpatricksdayProducts: Product[] =
+  createSaintPatricksDayProducts();
 
 export const getSaintPatricksDayProducts = (): Product[] => {
   return saintpatricksdayProducts;

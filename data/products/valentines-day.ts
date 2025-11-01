@@ -10,7 +10,7 @@ const createValentinesDayProducts = () => {
       price: 12.0,
       description: "Perfect for valentine's day",
       images: [
-        `/images/products/valentines/valentines-day-${i
+        `/images/products/valentines/valentines-${i
           .toString()
           .padStart(2, "0")}.webp`,
       ],

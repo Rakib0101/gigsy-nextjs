@@ -5,7 +5,7 @@ const LatexBalloonsPage = () => {
   const latexBalloons = getLatexBalloons();
   return (
     <>
-      <section className="pt-52 pb-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-center text-4xl md:text-5xl font-serif text-[#2c2c2c] mb-16 tracking-wide">
             LATEX BALLOONS

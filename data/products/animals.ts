@@ -2,14 +2,18 @@ import { Product } from "../products";
 
 const createAnimalsProducts = () => {
   const products = [];
-  for (let i = 1; i <= 98; i++) {
+  for (let i = 1; i <= 15; i++) {
     products.push({
       id: `animals-${i}`,
       name: "Animals Balloon",
       slug: "animals-details",
       price: 12.0,
       description: "Perfect for animals",
-      images: [`/images/products/animals/animals-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/animal-insects/animal-insects-${i
+          .toString()
+          .padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "theme",
         theme: "animals",

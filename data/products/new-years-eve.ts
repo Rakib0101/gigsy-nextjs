@@ -10,7 +10,7 @@ const createNewYearsEveProducts = () => {
       price: 12.0,
       description: "Perfect for new year's eve",
       images: [
-        `/images/products/new-year/new-years-eve-${i
+        `/images/products/new-year/new-year-${i
           .toString()
           .padStart(2, "0")}.webp`,
       ],
