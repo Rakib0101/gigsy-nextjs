@@ -9,7 +9,9 @@ const createRoundProducts = () => {
       slug: "round-details",
       price: 12.0,
       description: "Perfect for round",
-      images: [`/images/products/round/round-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/rounds/round-${i.toString().padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "shape",
         shape: "round",

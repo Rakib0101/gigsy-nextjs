@@ -9,7 +9,9 @@ const createHeartProducts = () => {
       slug: "heart-details",
       price: 12.0,
       description: "Perfect for heart",
-      images: [`/images/products/heart/heart-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/hearts/heart-${i.toString().padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "shape",
         shape: "heart",

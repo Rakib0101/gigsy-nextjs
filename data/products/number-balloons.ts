@@ -2,7 +2,7 @@ import { Product } from "../products";
 
 const createNumberBalloons = () => {
   const balloons = [];
-  for (let i = 1; i <= 45; i++) {
+  for (let i = 1; i <= 8; i++) {
     balloons.push({
       id: `number-balloon-${i}`,
       name: "Number Balloon",
@@ -10,7 +10,7 @@ const createNumberBalloons = () => {
       price: 15.0,
       description: "Perfect for milestone birthdays and celebrations",
       images: [
-        `/images/products/number-balloons/number-${i
+        `/images/products/giant-numbers/number-${i
           .toString()
           .padStart(2, "0")}.webp`,
       ],

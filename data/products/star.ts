@@ -9,7 +9,9 @@ const createStarProducts = () => {
       slug: "star-details",
       price: 12.0,
       description: "Perfect for star",
-      images: [`/images/products/star/star-${i.toString().padStart(2, "0")}.webp`],
+      images: [
+        `/images/products/stars/star-${i.toString().padStart(2, "0")}.webp`,
+      ],
       category: {
         type: "shape",
         shape: "star",
