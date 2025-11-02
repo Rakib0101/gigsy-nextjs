@@ -5,7 +5,7 @@ import { Product } from "@/data/products";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, Suspense } from "react";
 
 // Generate suggestions based on query
 const generateSuggestions = (query: string): string[] => {
@@ -62,7 +62,7 @@ const highlightText = (text: string, query: string): React.ReactNode => {
   );
 };
 
-export default function SearchPage() {
+function SearchContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "");
@@ -270,5 +270,17 @@ export default function SearchPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="fixed inset-0 bg-white z-[10001] flex items-center justify-center">
+        <div className="text-gray-500">Loading search...</div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 }
