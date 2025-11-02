@@ -99,10 +99,10 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f9f3f1] pt-52 pb-20">
+    <div className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
-        <div className="bg-[#f9f3f1] py-6 mb-8">
+        <div className="bg-[#f6dfd9] py-6 rounded-t-2xl ">
           <h1
             className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-2"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -114,13 +114,13 @@ export default function CartPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-[#f9f3f1] rounded-b-2xl overflow-hidden">
           {/* Left Section - Product Details */}
           <div className="lg:col-span-2 space-y-6">
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-200"
+                className="p-6"
               >
                 <div className="flex gap-6 mb-6">
                   {/* Product Image */}
@@ -130,7 +130,7 @@ export default function CartPage() {
                   >
                     <Image
                       src={item.image || "/images/placeholder.jpg"}
-                      alt={item.name}
+                      alt={item.name || "Product"}
                       fill
                       className="object-cover"
                     />
@@ -146,7 +146,7 @@ export default function CartPage() {
                         className="text-xl font-semibold text-gray-900 mb-1"
                         style={{ fontFamily: "'Playfair Display', serif" }}
                       >
-                        {item.name}
+                        {item.name || "Product"}
                       </h3>
                     </Link>
                     <p className="text-lg font-semibold text-gray-900 mb-4">
@@ -154,7 +154,7 @@ export default function CartPage() {
                     </p>
 
                     {/* Number Selection (if applicable - e.g., number balloons) */}
-                    {item.name.toLowerCase().includes("number") && (
+                    {item.name?.toLowerCase().includes("number") && (
                       <div className="mb-4">
                         <label className="block text-xs font-semibold uppercase tracking-wide mb-2 text-gray-700">
                           NUMBER:
@@ -249,7 +249,7 @@ export default function CartPage() {
                       }
                       placeholder="Add any specific assembly instructions here..."
                       rows={3}
-                      className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-800 resize-none"
+                      className="w-full px-3 bg-transparent py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-gray-800 resize-none"
                     />
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export default function CartPage() {
 
           {/* Right Section - Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 sticky top-32">
+            <div className="p-6 border-l border-gray-200 sticky top-32">
               {/* Notes Section */}
               <div className="flex gap-4 mb-6">
                 <button
