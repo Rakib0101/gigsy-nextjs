@@ -9,10 +9,10 @@ const FeaturedCategories = () => {
   const featuredCategories = getFeaturedCategories();
   const featuredSquareCategories = getFeaturedSquareCategories();
   return (
-    <section className="pt-40 pb-20 px-4 bg-white">
+    <section className="pt-20 pb-20 px-4 bg-white">
       <div className="container mx-auto max-w-7xl">
         {/* Title */}
-        <h2 className="text-center text-4xl lg:text-5xl font-bold font-serif text-[#2c2c2c] mb-16 tracking-wide">
+        <h2 className="text-center text-4xl lg:text-5xl font-bold font-serif text-[#2c2c2c] mb-4 tracking-wide">
           FEATURED COLLECTIONS
         </h2>
 

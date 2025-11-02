@@ -93,7 +93,7 @@ const Feature = () => {
 
   return (
     <>
-      <section className="pt-40 pb-20 px-4 bg-white">
+      <section className="pt-20 pb-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="bg-[#f9f3f1] p-5 flex flex-col items-center justify-center gap-1.5 rounded-xl">
