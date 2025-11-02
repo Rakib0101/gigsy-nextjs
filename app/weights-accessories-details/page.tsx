@@ -152,7 +152,7 @@ const ProductDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f9f3f1] pt-52 pb-20">
+    <div className="min-h-screen pt-16 pb-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Breadcrumbs */}
         <div className="mb-8 text-sm">

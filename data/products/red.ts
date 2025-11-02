@@ -4,7 +4,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-1",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-01.webp"],
@@ -20,7 +20,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-2",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-02.webp"],
@@ -36,7 +36,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-3",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-03.webp"],
@@ -52,7 +52,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-4",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-04.webp"],
@@ -68,7 +68,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-5",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-05.webp"],
@@ -84,7 +84,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-6",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-06.webp"],
@@ -100,7 +100,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-7",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-07.webp"],
@@ -116,7 +116,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-8",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-08.webp"],
@@ -132,7 +132,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-9",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-09.webp"],
@@ -148,7 +148,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-10",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-10.webp"],
@@ -164,7 +164,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-11",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-11.webp"],
@@ -180,7 +180,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-12",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-12.webp"],
@@ -196,7 +196,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-13",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-13.webp"],
@@ -212,7 +212,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-14",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-14.webp"],
@@ -228,7 +228,7 @@ export const redBalloons: Product[] = [
   {
     id: "red-15",
     name: "Red Balloon",
-    slug: "color-balloons-details",
+    slug: "red-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/red/red-15.webp"],

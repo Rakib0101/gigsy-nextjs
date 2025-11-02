@@ -4,7 +4,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-1",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-01.webp"],
@@ -20,7 +20,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-2",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-02.webp"],
@@ -36,7 +36,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-3",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-3.webp"],
@@ -52,7 +52,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-4",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-4.webp"],
@@ -68,7 +68,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-5",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-05.webp"],
@@ -84,7 +84,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-6",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-06.webp"],
@@ -100,7 +100,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-7",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-07.webp"],
@@ -116,7 +116,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-8",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-08.webp"],
@@ -132,7 +132,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-9",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-09.webp"],
@@ -148,7 +148,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-10",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-10.webp"],
@@ -164,7 +164,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-11",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-11.webp"],
@@ -180,7 +180,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-12",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-12.webp"],
@@ -196,7 +196,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-13",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-13.webp"],
@@ -212,7 +212,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-14",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-14.webp"],
@@ -228,7 +228,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-15",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-15.webp"],
@@ -244,7 +244,7 @@ export const orangeBalloons: Product[] = [
   {
     id: "orange-16",
     name: "Orange Balloon",
-    slug: "color-balloons-details",
+    slug: "orange-balloons-details",
     price: 10.0,
     description: "14 Colors",
     images: ["/images/products/orange/orange-16.webp"],

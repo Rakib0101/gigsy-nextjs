@@ -6,7 +6,7 @@ const createRainbowBalloons = () => {
     balloons.push({
       id: `rainbow-${i}`,
       name: "Rainbow Balloon",
-      slug: "color-balloons-details",
+      slug: "rainbow-balloons-details",
       price: 10.0,
       description: "14 Colors",
       images: [

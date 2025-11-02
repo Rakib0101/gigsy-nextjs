@@ -6,7 +6,7 @@ const createAnimalPrintBalloons = () => {
     balloons.push({
       id: `animal-print-${i}`,
       name: "Animal Print Balloon",
-      slug: "color-balloons-details",
+      slug: "animal-print-balloons-details",
       price: 10.0,
       description: "14 Colors",
       images: [

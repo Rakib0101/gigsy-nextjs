@@ -6,8 +6,8 @@ import {
   getCategoryLinkFromProduct,
   getFirstProductBySlug,
   getProductsBySlug,
+  getAllProducts,
 } from "@/data/product-helpers";
-import { getFeaturedProducts } from "@/data/products";
 import { addToCart } from "@/lib/cart";
 import {
   faFacebook,
@@ -46,25 +46,47 @@ const ProductDetailsPage = () => {
     if (!products || products.length === 0) {
       return [];
     }
+    
+    // Check if this is a color balloon page by checking the first product's category
+    const isColorBalloon = products[0]?.category?.type === "color-balloons";
+    const colorName = products[0]?.category?.color 
+      ? products[0].category.color
+          .split("-")
+          .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ")
+      : null;
+    
     return products.map((p, index) => {
-      // Try to extract a better name from the image path or product ID
+      // For color balloons, use a simpler naming scheme
       let variantName = `Variant ${index + 1}`;
 
-      // Extract name from image path (e.g., "/images/products/hearts/heart-01.webp" -> "Heart 1")
-      const imagePath = p.images[0] || "";
-      const match = imagePath.match(/\/([^\/]+)-(\d+)\.webp$/);
-      if (match) {
-        const baseName = match[1].charAt(0).toUpperCase() + match[1].slice(1);
-        const number = parseInt(match[2]);
-        variantName = `${baseName} ${number}`;
-      } else {
-        // Try to extract from product ID (e.g., "heart-1" -> "Heart 1")
-        const idMatch = p.id.match(/^([^-]+)-(\d+)$/);
+      if (isColorBalloon && colorName) {
+        // For color balloons, try to extract the number from product ID or image path
+        // e.g., "red-1" -> "Red Balloon 1", "red-14" -> "Red Balloon 14"
+        const idMatch = p.id.match(/-(\d+)$/);
         if (idMatch) {
-          const baseName =
-            idMatch[1].charAt(0).toUpperCase() + idMatch[1].slice(1);
-          const number = parseInt(idMatch[2]);
+          const number = parseInt(idMatch[1]);
+          variantName = `${colorName} Balloon ${number}`;
+        } else {
+          variantName = `${colorName} Balloon ${index + 1}`;
+        }
+      } else {
+        // Try to extract a better name from the image path or product ID
+        const imagePath = p.images[0] || "";
+        const match = imagePath.match(/\/([^\/]+)-(\d+)\.webp$/);
+        if (match) {
+          const baseName = match[1].charAt(0).toUpperCase() + match[1].slice(1);
+          const number = parseInt(match[2]);
           variantName = `${baseName} ${number}`;
+        } else {
+          // Try to extract from product ID (e.g., "heart-1" -> "Heart 1")
+          const idMatch = p.id.match(/^([^-]+)-(\d+)$/);
+          if (idMatch) {
+            const baseName =
+              idMatch[1].charAt(0).toUpperCase() + idMatch[1].slice(1);
+            const number = parseInt(idMatch[2]);
+            variantName = `${baseName} ${number}`;
+          }
         }
       }
 
@@ -103,6 +125,32 @@ const ProductDetailsPage = () => {
     }
   }, [variantOptions, selectedVariant.id]);
 
+  // Get related products - exclude current product and get random products with images
+  // Must be called before early return to maintain hook order
+  const relatedProducts = useMemo(() => {
+    if (!product || products.length === 0) {
+      return [];
+    }
+    const allProducts = getAllProducts();
+    // Get current product IDs to exclude them
+    const currentProductIds = products.map((p) => p.id);
+    
+    // Filter out current product(s) and products without images
+    const availableProducts = allProducts.filter(
+      (p) =>
+        !currentProductIds.includes(p.id) &&
+        p.slug !== slug &&
+        p.images &&
+        p.images.length > 0 &&
+        p.images[0] &&
+        !p.images[0].includes("placeholder") &&
+        p.images[0] !== "/images/placeholder.jpg"
+    );
+    // Get 3 random products, or less if not enough available
+    const shuffled = [...availableProducts].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3);
+  }, [slug, products, product]);
+
   // If product not found, show 404 - check AFTER all hooks
   if (!product || products.length === 0) {
     return (
@@ -116,12 +164,6 @@ const ProductDetailsPage = () => {
       </div>
     );
   }
-
-  // Get related products
-  const relatedProducts =
-    getFeaturedProducts().slice(0, 3).length > 0
-      ? getFeaturedProducts().slice(0, 3)
-      : [];
 
   const productName = product.name;
   const productPrice = product.salePrice || product.price;
@@ -176,7 +218,7 @@ const ProductDetailsPage = () => {
   const thumbnailCols = Math.min(variantOptions.length, 7);
 
   return (
-    <div className="min-h-screen bg-[#f9f3f1] pt-52 pb-20">
+    <div className="min-h-screen pt-16 pb-20">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Breadcrumbs */}
         <div className="mb-8 text-sm">
@@ -269,7 +311,7 @@ const ProductDetailsPage = () => {
                       setSelectedVariant(variant);
                       setCurrentImageIndex(index);
                     }}
-                    className={`relative aspect-square rounded overflow-hidden border-2 transition ${
+                    className={`relative aspect-square rounded overflow-hidden border transition ${
                       selectedVariant.id === variant.id
                         ? "border-gray-900"
                         : "border-transparent hover:border-gray-400"
@@ -334,9 +376,9 @@ const ProductDetailsPage = () => {
                           variantOptions.findIndex((v) => v.id === variant.id)
                         );
                       }}
-                      className={`relative aspect-square rounded overflow-hidden border-2 transition ${
+                      className={`relative aspect-square rounded-full overflow-hidden border transition ${
                         selectedVariant.id === variant.id
-                          ? "border-gray-900 ring-2 ring-gray-900"
+                          ? "border-gray-900"
                           : "border-gray-300 hover:border-gray-600"
                       }`}
                     >
