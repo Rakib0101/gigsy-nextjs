@@ -66,11 +66,11 @@ export default function ProductCard({ product, colorCount }: ProductCardProps) {
         <div className="p-3 bg-[#f9f3f1]">
           {/* Price */}
           <div className="mb-1">
-            <span className="text-base font-semibold text-gray-900">
+            <span className="text-2xl font-semibold text-black">
               ${displayPrice.toFixed(2)}
             </span>
             {hasSale && (
-              <span className="ml-2 text-sm text-gray-500 line-through">
+              <span className="ml-2 text-lg text-gray-900 line-through">
                 ${product.price.toFixed(2)}
               </span>
             )}
