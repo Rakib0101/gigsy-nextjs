@@ -372,7 +372,8 @@ export const categoryData = {
         name: "Rainbows",
         slug: "/collections/rainbows",
         count: 67,
-        image: "/images/categories/theme-07.webp",
+        image: "/images/categories/theme-rainbow.webp",
+        featured: true,
       },
       {
         name: "Sports",
@@ -424,7 +425,6 @@ export const categoryData = {
         slug: "/collections/licensed-themes",
         count: 45,
         image: "/images/categories/theme-licensed.webp",
-        featured: true,
       },
     ],
     licensed: [
