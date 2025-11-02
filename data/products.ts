@@ -1,4 +1,5 @@
 // Product data structure for the store
+import { getAllProducts as getAllProductsFromHelpers } from "./product-helpers";
 
 export interface Product {
   id: string;
@@ -249,11 +250,14 @@ export const getFeaturedProducts = (): Product[] => {
 };
 
 export const searchProducts = (query: string): Product[] => {
+  // Get all products from all categories to search
+  const allProducts = getAllProductsFromHelpers();
+  
   const lowercaseQuery = query.toLowerCase();
-  return products.filter(product => 
+  return allProducts.filter(product => 
     product.name.toLowerCase().includes(lowercaseQuery) ||
     product.description.toLowerCase().includes(lowercaseQuery) ||
-    product.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
+    (product.tags && product.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery)))
   );
 };
 

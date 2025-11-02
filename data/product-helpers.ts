@@ -181,7 +181,7 @@ export const getCategoryInfo = (categorySlug: string) => {
 /**
  * Get all products from all categories (used to find products by slug)
  */
-const getAllProducts = (): Product[] => {
+export const getAllProducts = (): Product[] => {
   const allProducts: Product[] = [];
   Object.values(categoryToProductGetter).forEach((getter) => {
     allProducts.push(...getter());

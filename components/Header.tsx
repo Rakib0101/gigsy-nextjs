@@ -183,7 +183,7 @@ export default function Header() {
             <div className="flex items-center justify-end gap-4">
               {/* Search Icon - Mobile shows icon only, Desktop shows icon + text */}
               <Link
-                href="#"
+                href="/search"
                 className="flex gap-1 items-center text-gray-800 hover:text-gray-600 transition no-underline"
               >
                 <svg
