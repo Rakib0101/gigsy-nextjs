@@ -57,7 +57,7 @@ const CollectionsPage = () => {
             {balloonsByType.map((category) => (
               <Link
                 key={category.slug}
-                href={`/${category.slug}`}
+                href={`${category.slug}`}
                 className="group flex flex-col items-center max-w-[132px]"
               >
                 {/* Circular Image Container */}
@@ -88,7 +88,7 @@ const CollectionsPage = () => {
             {balloonsByShape.map((category) => (
               <Link
                 key={category.slug}
-                href={`/${category.slug}`}
+                href={`${category.slug}`}
                 className="group flex flex-col items-center max-w-[132px]"
               >
                 {/* Circular Image Container */}
@@ -119,7 +119,7 @@ const CollectionsPage = () => {
             {balloonsByColor.map((category) => (
               <Link
                 key={category.slug}
-                href={`/${category.slug}`}
+                href={`${category.slug}`}
                 className="group flex flex-col items-center max-w-[132px]"
               >
                 {/* Circular Image Container */}
