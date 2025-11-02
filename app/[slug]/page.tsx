@@ -22,7 +22,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 // Interface for variant options (colors/images)
 interface VariantOption {
@@ -37,26 +37,15 @@ const ProductDetailsPage = () => {
   const params = useParams();
   const slug = params?.slug as string;
 
-  // Get all product variants
+  // Get all product variants - must be called before any early returns
   const products = useMemo(() => getProductsBySlug(slug), [slug]);
   const product = useMemo(() => getFirstProductBySlug(slug), [slug]);
 
-  // If product not found, show 404
-  if (!product || products.length === 0) {
-    return (
-      <div className="min-h-screen bg-[#f9f3f1] pt-52 pb-20 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Product Not Found</h1>
-          <Link href="/" className="text-blue-600 hover:underline">
-            Return to Home
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  // Create variant options from products
+  // Create variant options from products - handle empty case
   const variantOptions: VariantOption[] = useMemo(() => {
+    if (!products || products.length === 0) {
+      return [];
+    }
     return products.map((p, index) => {
       // Try to extract a better name from the image path or product ID
       let variantName = `Variant ${index + 1}`;
@@ -89,11 +78,44 @@ const ProductDetailsPage = () => {
     });
   }, [products]);
 
+  // Initialize state with safe defaults - must be called before early returns
+  const defaultVariant: VariantOption = {
+    id: "",
+    name: "Default",
+    slug: "",
+    image: "/images/placeholder.jpg",
+    productId: "",
+  };
   const [selectedVariant, setSelectedVariant] = useState<VariantOption>(
-    variantOptions[0]
+    variantOptions[0] || defaultVariant
   );
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Update selected variant when variantOptions changes
+  useEffect(() => {
+    if (
+      variantOptions.length > 0 &&
+      !variantOptions.find((v) => v.id === selectedVariant.id)
+    ) {
+      setSelectedVariant(variantOptions[0]);
+      setCurrentImageIndex(0);
+    }
+  }, [variantOptions, selectedVariant.id]);
+
+  // If product not found, show 404 - check AFTER all hooks
+  if (!product || products.length === 0) {
+    return (
+      <div className="min-h-screen bg-[#f9f3f1] pt-52 pb-20 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Product Not Found</h1>
+          <Link href="/" className="text-blue-600 hover:underline">
+            Return to Home
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   // Get related products
   const relatedProducts =
