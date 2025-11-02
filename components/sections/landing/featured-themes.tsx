@@ -25,7 +25,7 @@ const FeaturedThemes = () => {
           {themes.map((theme) => (
             <Link
               key={theme.slug}
-              href={`/theme/${theme.slug}`}
+              href={`${theme.slug}`}
               className="group relative rounded-lg overflow-hidden border border-gray-200 hover:scale-105 transition-transform duration-300"
             >
               <Image
