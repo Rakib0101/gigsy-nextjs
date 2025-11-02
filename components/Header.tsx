@@ -141,7 +141,7 @@ export default function Header() {
             {/* User Icon - Desktop */}
             <div className="hidden lg:flex items-center">
               <Link
-                href="/"
+                href="/login"
                 className="inline-flex items-center text-gray-800 hover:text-gray-600 transition"
               >
                 <svg
