@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: "JOYINFLATE - Balloons Delivered Straight to Your Door",
   description:
     "Premium balloons for every celebration. Balloons delivered straight to your door. Joyinflate is the best place to buy balloons online. We offer a wide range of balloons for every occasion, balloon accessories, decorations, and favors.",
+  icons: {
+    icon: [
+      { url: "/images/logo.png", sizes: "any" },
+      { url: "/images/logo.avif", type: "image/avif" },
+    ],
+    apple: [
+      { url: "/images/logo.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
