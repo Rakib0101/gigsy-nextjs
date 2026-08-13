@@ -1,96 +1,11 @@
-"use client";
 import Arrow from "@/components/global/svgs/arrow";
 import Assortments from "@/components/global/svgs/assortments";
 import Checkbox from "@/components/global/svgs/checkbox";
 import Pickup from "@/components/global/svgs/pickup";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import FaqAccordion from "./FaqAccordion";
 
 const Feature = () => {
-  const faqs = [
-    {
-      q: "Where do you deliver?",
-      a: "We currently offer delivery throughout the New York City and surrounding area.",
-    },
-    {
-      q: "It says you don't deliver to me when I enter my zip code.",
-      a: "Please contact support with your zip code. We are expanding zones and can often accommodate special requests.",
-    },
-    {
-      q: "Do your balloons arrive inflated with helium?",
-      a: "Yes, unless otherwise noted, balloons arrive pre-inflated and ready to enjoy.",
-    },
-    {
-      q: "Help! I need delivery for a certain time or date that is no longer showing up as available.",
-      a: "Reach out via email or phone and we'll do our best to fit you in or suggest alternatives.",
-    },
-  ];
-
-  const [openIndex, setOpenIndex] = useState<number>(0);
-
-  const toggle = (index: number) => {
-    setOpenIndex((prev) => (prev === index ? -1 : index));
-  };
-
-  const AccordionItem = ({
-    q,
-    a,
-    isOpen,
-    onToggle,
-    index,
-  }: {
-    q: string;
-    a: string;
-    isOpen: boolean;
-    onToggle: (idx: number) => void;
-    index: number;
-  }) => {
-    const contentRef = useRef<HTMLDivElement | null>(null);
-    const [measuredHeight, setMeasuredHeight] = useState(0);
-
-    useEffect(() => {
-      if (contentRef.current) {
-        setMeasuredHeight(contentRef.current.scrollHeight);
-      }
-    }, [isOpen, q, a]);
-
-    return (
-      <div
-        className={`rounded-lg bg-[#35353a] text-white px-6 py-5 transition`}
-      >
-        <button
-          onClick={() => onToggle(index)}
-          className="w-full flex items-center justify-between text-left"
-          aria-expanded={isOpen}
-          aria-controls={`faq-panel-${index}`}
-        >
-          <span className="font-medium text-base md:text-lg pr-4">{q}</span>
-          <span className="border border-white rounded-full w-7 h-7 flex items-center justify-center select-none">
-            <span
-              className={`text-2xl text-white leading-none transition-transform duration-300 ${
-                isOpen ? "" : ""
-              }`}
-            >
-              {isOpen ? "−" : "+"}
-            </span>
-          </span>
-        </button>
-        <div
-          id={`faq-panel-${index}`}
-          className="overflow-hidden transition-[max-height] duration-300 ease-in-out"
-          style={{ maxHeight: isOpen ? measuredHeight : 0 }}
-        >
-          <div
-            ref={contentRef}
-            className="mt-3 text-base md:text-lg text-left leading-snug pb-4"
-          >
-            {a}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <>
       <section className="pt-20 pb-20 px-4 bg-white">
@@ -134,6 +49,7 @@ const Feature = () => {
                 width={222}
                 height={264}
                 className="object-cover w-full md:w-auto"
+                sizes="(max-width: 768px) 100vw, 222px"
               />
               <ul className="flex flex-col gap-2 md:gap-4 py-6 md:py-12 px-4 md:px-6">
                 <li className="flex items-center gap-2 text-2xl md:text-3xl lg:text-[44px] uppercase font-bold">
@@ -153,15 +69,16 @@ const Feature = () => {
           </div>
         </div>
       </section>
-      <section
-        className="py-12 md:py-20 px-4"
-        style={{
-          backgroundImage: "url('/images/bg-instagram.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="container mx-auto max-w-7xl">
+      <section className="py-12 md:py-20 px-4 relative overflow-hidden">
+        <Image
+          src="/images/bg-instagram.webp"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="container mx-auto max-w-7xl relative z-10">
           <div className="flex justify-center items-center">
             <div className="w-full text-center flex flex-col gap-3 md:gap-4 items-center justify-center max-w-[360px] bg-white/40 backdrop-blur-sm border border-white-200 rounded-xl px-4 md:px-6 py-8 md:py-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl uppercase font-bold">
@@ -177,13 +94,12 @@ const Feature = () => {
       <section className="py-12">
         <div className="container mx-auto">
           <div className="max-w-[825px] mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 rounded-2xl bg-[#f9f3f1] px-4 md:px-8 lg:px-12 py-8 md:py-12 lg:py-16">
-            {/* Left column: Help text and contact */}
             <div className="flex-1 flex flex-col">
               <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-[#46444e] mb-2">
                 NEED HELP?
               </h2>
               <p className="text-base md:text-lg text-[#46444e] mb-6 font-medium">
-                Email or call us and we’ll get back to you shortly!
+                Email or call us and we&apos;ll get back to you shortly!
               </p>
               <div className="flex flex-col gap-2 text-sm text-[#46444e]">
                 <div>
@@ -209,25 +125,12 @@ const Feature = () => {
                 </div>
               </div>
             </div>
-            {/* Right column: FAQs */}
-            <div className="flex-1 flex flex-col gap-3">
-              {faqs.map((item, idx) => (
-                <AccordionItem
-                  key={item.q}
-                  q={item.q}
-                  a={item.a}
-                  isOpen={openIndex === idx}
-                  onToggle={toggle}
-                  index={idx}
-                />
-              ))}
-            </div>
+            <FaqAccordion />
           </div>
         </div>
       </section>
       <div className="container mx-auto pb-12">
         <div className="max-w-xl mx-auto flex flex-col md:flex-row justify-between rounded-xl bg-[#f9f3f1] px-4 md:px-8 py-6 md:py-8">
-          {/* Left section: Pickup info */}
           <div className="flex-1">
             <h2 className="text-2xl md:text-3xl font-bold text-[#46444e] mb-4 leading-none">
               PICK UP
@@ -241,7 +144,6 @@ const Feature = () => {
             </p>
             <p className="text-[#46444e] text-sm">Suite downstairs</p>
           </div>
-          {/* Right section: Hours & Directions */}
           <div className="flex-1 flex flex-col items-start md:items-end mt-6 md:mt-0">
             <h3 className="text-lg font-semibold text-[#46444e] mb-2">HOURS</h3>
             <div className="text-[#46444e] text-right text-sm mb-3">
@@ -274,17 +176,16 @@ const Feature = () => {
               What Our Customers Are Saying About Us
             </h2>
             <div className="flex flex-col gap-5">
-              {/* Header: profile & write review button */}
               <div className="flex justify-between items-center mb-4 bg-[#f7f9fb] p-6 rounded-xl">
                 <div className="flex gap-3 items-center">
-                  {/* Company logo */}
                   <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white p-1.5 border border-[#eaeaea]">
                     <Image
-                      src="/images/logo.png"
-                      alt="Glosy Balloons"
+                      src="/images/logo.avif"
+                      alt="JoyInFlate"
                       width={48}
                       height={48}
                       className="object-cover"
+                      sizes="48px"
                     />
                   </div>
                   <div>
@@ -310,8 +211,6 @@ const Feature = () => {
                   Write a Review
                 </a>
               </div>
-
-              {/* Carousel of reviews */}
               <div className="w-full overflow-x-auto">
                 <div className="flex gap-3 md:min-w-0 md:justify-center">
                   <div className="w-full min-w-[280px] md:w-72 bg-[#f9f9fb] rounded-lg shadow p-4 flex flex-col gap-1">

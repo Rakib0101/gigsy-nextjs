@@ -112,7 +112,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} JIGSY. All rights reserved.
+            &copy; {new Date().getFullYear()} JoyInFlate. All rights reserved.
           </p>
         </div>
 

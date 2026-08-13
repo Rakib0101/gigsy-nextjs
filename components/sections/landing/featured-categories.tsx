@@ -31,6 +31,8 @@ const FeaturedCategories = () => {
                 width={132}
                 height={132}
                 className="w-full h-full rounded-full group-hover:scale-105 transition-all duration-300 object-cover"
+                priority
+                sizes="(max-width: 768px) 80px, 132px"
               />
               <h3 className="text-center text-lg uppercase font-medium text-[#2c2c2c] mt-2">
                 {category.name}
@@ -54,6 +56,7 @@ const FeaturedCategories = () => {
                 className="object-contain w-full h-auto -mt-12 md:-mt-20 mx-auto"
                 draggable={false}
                 priority
+                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 25vw, 130px"
               />
               <div className="w-full flex-1 flex items-end">
                 <h3 className="w-full text-center text-lg md:text-2xl font-serif font-bold uppercase text-white tracking-wide px-2">

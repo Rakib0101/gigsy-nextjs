@@ -12,8 +12,8 @@ module.exports = {
         accent: '#45b7d1',
       },
       fontFamily: {
-        sans: ['Lato', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        sans: ['var(--font-lato)', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'serif'],
       },
     },
   },

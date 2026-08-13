@@ -8,25 +8,28 @@ const Fun = () => {
         </p>
         <div className="flex flex-wrap justify-center md:justify-around gap-4 md:gap-6 lg:gap-12 max-w-3xl mx-auto">
           <Image
-            src="/images/logo.png"
-            alt="JIGSY"
+            src="/images/logo.avif"
+            alt="JoyInFlate"
             width={103}
             height={30}
             className="w-20 md:w-[103px] h-auto"
+            sizes="103px"
           />
           <Image
-            src="/images/logo.png"
-            alt="JIGSY"
+            src="/images/logo.avif"
+            alt="JoyInFlate"
             width={103}
             height={30}
             className="w-20 md:w-[103px] h-auto"
+            sizes="103px"
           />
           <Image
-            src="/images/logo.png"
-            alt="JIGSY"
+            src="/images/logo.avif"
+            alt="JoyInFlate"
             width={103}
             height={30}
             className="w-20 md:w-[103px] h-auto"
+            sizes="103px"
           />
         </div>
       </div>

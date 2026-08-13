@@ -7,6 +7,8 @@ export default function Hero() {
           autoPlay
           muted
           loop
+          playsInline
+          preload="none"
           className="object-cover w-full h-full"
         />
       </div>

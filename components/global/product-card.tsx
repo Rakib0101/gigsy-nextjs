@@ -24,7 +24,7 @@ export default function ProductCard({ product, colorCount }: ProductCardProps) {
       name: product.name,
       price: displayPrice,
       quantity,
-      image: product.images[0] || "/images/placeholder.jpg",
+      image: product.images[0] || "/images/categories/celebrations.webp",
       slug: product.slug,
     };
 
@@ -54,7 +54,7 @@ export default function ProductCard({ product, colorCount }: ProductCardProps) {
         {/* Product Image */}
         <div className="relative aspect-square w-full bg-white overflow-hidden">
           <Image
-            src={product.images[0] || "/images/placeholder.jpg"}
+            src={product.images[0] || "/images/categories/celebrations.webp"}
             alt={product.name}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"

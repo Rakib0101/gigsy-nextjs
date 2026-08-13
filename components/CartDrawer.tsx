@@ -125,7 +125,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                       className="relative w-20 h-20 flex-shrink-0 bg-gray-100 rounded overflow-hidden"
                     >
                       <Image
-                        src={item.image || "/images/placeholder.jpg"}
+                        src={item.image || "/images/categories/celebrations.webp"}
                         alt={item.name || "Product"}
                         fill
                         className="object-cover"

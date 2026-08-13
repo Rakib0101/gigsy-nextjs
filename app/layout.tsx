@@ -1,10 +1,22 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
+import { Lato, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const playfair_display = Playfair_Display({ subsets: ["latin"] });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-lato",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "JOYINFLATE - Balloons Delivered Straight to Your Door",
@@ -28,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={playfair_display.className}>
+      <body className={`${playfair.variable} ${lato.variable}`}>
         <Header />
         <main className="pt-[140px] lg:pt-[180px]">{children}</main>
         <Footer />

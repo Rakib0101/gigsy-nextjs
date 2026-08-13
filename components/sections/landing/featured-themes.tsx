@@ -22,7 +22,7 @@ const FeaturedThemes = () => {
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-12">
-          {themes.map((theme) => (
+          {themes.map((theme, index) => (
             <Link
               key={theme.slug}
               href={`${theme.slug}`}
@@ -33,7 +33,9 @@ const FeaturedThemes = () => {
                 alt={theme.name}
                 width={264}
                 height={356}
-                className="aspect-66/89 w-full h-full lg:min-h-[356px] object-cover"
+                className="w-full h-full lg:min-h-[356px] object-cover"
+                priority={index < 4}
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 264px"
               />
               <h3 className="absolute bottom-2 left-2 w-full text-lg md:text-3xl font-serif font-bold uppercase text-[#3a3a3e] tracking-wide px-2">
                 {theme.name}
@@ -52,6 +54,7 @@ const FeaturedThemes = () => {
               height={210}
               className="object-cover w-full max-h-[400px] rounded-xl"
               priority
+              sizes="(max-width: 1024px) 100vw, 66vw"
             />
           </div>
           {/* Right: Text box */}

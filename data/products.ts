@@ -34,7 +34,7 @@ export const products: Product[] = [
     price: 24.99,
     salePrice: 19.99,
     description: 'A stunning giant pink balloon filled with confetti - perfect for any celebration!',
-    images: ['/images/products/giant-pink-confetti.jpg'],
+    images: ['/images/products/pink/pink-01.webp'],
     category: {
       type: 'specialty-balloons',
       color: 'pink',
@@ -54,7 +54,7 @@ export const products: Product[] = [
     slug: 'gold-number-30-balloon',
     price: 18.99,
     description: 'Elegant gold foil number balloon perfect for milestone birthdays!',
-    images: ['/images/products/gold-number-30.jpg'],
+    images: ['/images/products/giant-numbers/number-01.webp'],
     category: {
       type: 'number-balloons',
       color: 'gold',
@@ -74,7 +74,7 @@ export const products: Product[] = [
     slug: 'rainbow-heart-orbz-balloon',
     price: 22.99,
     description: 'Beautiful rainbow heart Orbz balloon that adds a pop of color to any celebration!',
-    images: ['/images/products/rainbow-heart-orbz.jpg'],
+    images: ['/images/products/orbz/orbz-01.webp'],
     category: {
       type: 'orbz-balloons',
       color: 'rainbow',
@@ -95,7 +95,7 @@ export const products: Product[] = [
     slug: 'blue-star-latex-balloon-set',
     price: 12.99,
     description: 'Set of 5 blue star-shaped latex balloons perfect for party decorations!',
-    images: ['/images/products/blue-star-latex-set.jpg'],
+    images: ['/images/products/blue/blue-01.webp'],
     category: {
       type: 'latex-balloons',
       color: 'blue',
@@ -115,7 +115,7 @@ export const products: Product[] = [
     slug: 'red-christmas-ornament-balloon',
     price: 19.99,
     description: 'Festive red Christmas ornament balloon to celebrate the holidays!',
-    images: ['/images/products/red-christmas-ornament.jpg'],
+    images: ['/images/products/christmas/christmas-01.webp'],
     category: {
       type: 'foil-shapes',
       color: 'red',
@@ -135,7 +135,7 @@ export const products: Product[] = [
     slug: 'letter-h-gold-foil-balloon',
     price: 15.99,
     description: 'Gold foil letter H balloon - spell out names, messages, or words!',
-    images: ['/images/products/letter-h-gold.jpg'],
+    images: ['/images/products/letter-balloons/letter-01.webp'],
     category: {
       type: 'letter-balloons',
       color: 'gold'
@@ -154,7 +154,7 @@ export const products: Product[] = [
     slug: 'pink-unicorn-theme-balloon',
     price: 21.99,
     description: 'Magical pink unicorn themed balloon for the perfect magical celebration!',
-    images: ['/images/products/pink-unicorn.jpg'],
+    images: ['/images/products/unicorn/unicorn-01.webp'],
     category: {
       type: 'specialty-balloons',
       color: 'pink',
@@ -175,7 +175,7 @@ export const products: Product[] = [
     slug: 'purple-birthday-cake-balloon',
     price: 17.99,
     description: 'Delightful purple birthday cake balloon to make any birthday extra special!',
-    images: ['/images/products/purple-birthday-cake.jpg'],
+    images: ['/images/products/purple/purple-01.webp'],
     category: {
       type: 'foil-shapes',
       color: 'purple',
@@ -196,7 +196,7 @@ export const products: Product[] = [
     slug: 'black-halloween-jack-o-lantern-balloon',
     price: 20.99,
     description: 'Spooky black Halloween jack-o-lantern balloon for your Halloween celebration!',
-    images: ['/images/products/halloween-jack-o-lantern.jpg'],
+    images: ['/images/products/halloween/halloween-01.webp'],
     category: {
       type: 'foil-shapes',
       color: 'black',
@@ -217,7 +217,7 @@ export const products: Product[] = [
     slug: 'mermaid-tail-gradient-balloon',
     price: 23.99,
     description: 'Stunning mermaid tail gradient balloon in aqua and purple tones!',
-    images: ['/images/products/mermaid-tail.jpg'],
+    images: ['/images/products/mermaid/mermaid-01.webp'],
     category: {
       type: 'specialty-balloons',
       theme: 'mermaid',

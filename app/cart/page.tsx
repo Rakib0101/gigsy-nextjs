@@ -129,7 +129,7 @@ export default function CartPage() {
                     className="relative w-32 h-32 flex-shrink-0 bg-gray-100 rounded overflow-hidden"
                   >
                     <Image
-                      src={item.image || "/images/placeholder.jpg"}
+                      src={item.image || "/images/categories/celebrations.webp"}
                       alt={item.name || "Product"}
                       fill
                       className="object-cover"

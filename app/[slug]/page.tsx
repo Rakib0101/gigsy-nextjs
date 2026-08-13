@@ -94,7 +94,7 @@ const ProductDetailsPage = () => {
         id: p.id,
         name: variantName,
         slug: p.slug,
-        image: p.images[0] || "/images/placeholder.jpg",
+        image: p.images[0] || "/images/categories/celebrations.webp",
         productId: p.id,
       };
     });
@@ -105,7 +105,7 @@ const ProductDetailsPage = () => {
     id: "",
     name: "Default",
     slug: "",
-    image: "/images/placeholder.jpg",
+    image: "/images/categories/celebrations.webp",
     productId: "",
   };
   const [selectedVariant, setSelectedVariant] = useState<VariantOption>(
@@ -144,7 +144,7 @@ const ProductDetailsPage = () => {
         p.images.length > 0 &&
         p.images[0] &&
         !p.images[0].includes("placeholder") &&
-        p.images[0] !== "/images/placeholder.jpg"
+        p.images[0] !== "/images/categories/celebrations.webp"
     );
     // Get 3 random products, or less if not enough available
     const shuffled = [...availableProducts].sort(() => 0.5 - Math.random());
