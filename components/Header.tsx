@@ -171,7 +171,7 @@ export default function Header() {
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 <Image
-                  src="/images/logo.avif"
+                  src="/images/logo.png"
                   alt="JoyInFlate"
                   width={100}
                   height={100}
@@ -499,7 +499,7 @@ export default function Header() {
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               <Image
-                src="/images/logo.avif"
+                src="/images/logo.png"
                 alt="JoyInFlate"
                 width={80}
                 height={80}

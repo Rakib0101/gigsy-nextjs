@@ -180,7 +180,7 @@ const Feature = () => {
                 <div className="flex gap-3 items-center">
                   <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white p-1.5 border border-[#eaeaea]">
                     <Image
-                      src="/images/logo.avif"
+                      src="/images/logo.png"
                       alt="JoyInFlate"
                       width={48}
                       height={48}

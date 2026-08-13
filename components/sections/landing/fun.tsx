@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 const Fun = () => {
   return (
     <div className="bg-[#3a3a3e] text-white py-16 px-4 mt-12">
@@ -8,7 +9,7 @@ const Fun = () => {
         </p>
         <div className="flex flex-wrap justify-center md:justify-around gap-4 md:gap-6 lg:gap-12 max-w-3xl mx-auto">
           <Image
-            src="/images/logo.avif"
+            src="/images/logo.png"
             alt="JoyInFlate"
             width={103}
             height={30}
@@ -16,7 +17,7 @@ const Fun = () => {
             sizes="103px"
           />
           <Image
-            src="/images/logo.avif"
+            src="/images/logo.png"
             alt="JoyInFlate"
             width={103}
             height={30}
@@ -24,7 +25,7 @@ const Fun = () => {
             sizes="103px"
           />
           <Image
-            src="/images/logo.avif"
+            src="/images/logo.png"
             alt="JoyInFlate"
             width={103}
             height={30}
