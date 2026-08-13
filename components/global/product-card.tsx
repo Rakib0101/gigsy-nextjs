@@ -8,10 +8,11 @@ import { useState } from "react";
 
 interface ProductCardProps {
   product: Product;
-  colorCount?: number; // Optional: number of available colors (e.g., "14 COLORS")
+  colorCount?: number;
+  index?: number;
 }
 
-export default function ProductCard({ product, colorCount }: ProductCardProps) {
+export default function ProductCard({ product, colorCount, index = 99 }: ProductCardProps) {
   const [quantity, setQuantity] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -58,7 +59,8 @@ export default function ProductCard({ product, colorCount }: ProductCardProps) {
             alt={product.name}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={index < 3}
           />
         </div>
 

@@ -15,8 +15,8 @@ const LetterBalloonsPage = () => {
             perfect balloon display. Spell out names, messages, or words!
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {letterBalloons.map((product) => (
-              <ProductCard key={product.id} product={product} colorCount={14} />
+            {letterBalloons.map((product, index) => (
+              <ProductCard key={product.id} product={product} colorCount={14} index={index} />
             ))}
           </div>
         </div>
